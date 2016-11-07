@@ -1,0 +1,39 @@
+<%-include header.html %>
+		<form class="form-horizontal" method="post" action="/admin/photo" enctype="multipart/form-data">
+			<% if(mmPic._id){%>
+				<input type="hidden" name="mmPic[_id]" value="<%=mmPic._id%>"></input>
+			<%}%>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="uploadPic">图片上传</label>
+				<div class="col-md-10">
+					<input id="uploadPic" type="file" name="uploadPic"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="inputAlt">图片提示</label>
+				<div class="col-md-10">
+					<input id="inputAlt" class="form-control" type="text" name="mmPic[alt]" value="<%=mmPic.alt%>" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="inputCaption">图片caption</label>
+				<div class="col-md-10">
+					<input id="inputCaption" class="form-control" type="text" name="mmPic[caption]" value="<%=mmPic.caption%>"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="inputDesc">图片描述-三行情诗</label>
+				<div class="col-md-10">
+					<input id="inputDesc" class="form-control" type="text" name="mmPic[desc]" value="<%=mmPic.desc%>"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button class="btn btn-default" type="submit">录入</button>
+				</div>
+			</div>
+		</form>
+<script type="text/javascript" src="/js/admin.js"></script>
+<%-include footer.html %>
+</body>
+</html>

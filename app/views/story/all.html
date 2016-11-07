@@ -1,0 +1,39 @@
+<%-include header.html %>
+	<div class="container">
+		<div class="all-novels bg_color">
+			<%	cats.forEach(function(cat){%>
+					<div class="novel-list">
+						<div class="h2 text-center"><%=cat[0].categoryname%>
+						</div>
+						<% cat.forEach(function(item,i){
+							if(i%4 == 0){%>
+								<div class="row text-center">
+							<%
+							}%>
+								<div class="col-md-3"><a href="javascript:void(0)" onclick="goSummary('<%=item.link%>')"><%=item.storyname%></a>/<%=item.author%></div>
+							<%
+							var k = i+1
+							if(k%4 == 0){%>
+								</div>
+							<%}
+						})%>
+					</div>
+			<%})%>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function update(){
+			$.ajax({
+				type : 'POST',
+				url : '/story/update'
+			})
+			.done(function(results){
+				// console.log(results.success);
+				console.log(results);
+			})
+		}
+		function goSummary(link){
+			console.log(link);
+		}
+	</script>
+<%-include footer.html %>

@@ -1,0 +1,378 @@
+/**
+	story_type 小说类型页面 样式
+*/
+.type{
+	padding: 10px 0;
+	flex: 1;
+	float: left;
+}
+/**
+	type页面 recommend样式 默认样式 min-width: 996px
+*/
+.recommend{
+	float: left;
+}
+.recommend .recommend-left{
+	width: 210px;
+	padding: 0 20px;
+	float: left;
+	border: 1px rgb(119,136,153) solid;
+}
+.recommend-left .recommend-left-head{
+	color: red;
+	font-weight: 900;
+	font-size: 30px;
+	line-height: 30px;
+	padding: 10px 0;
+}
+.recommend .recommend-left ul{
+	list-style: none;
+	height: 370px;
+	padding: 0;
+	margin: 0;
+}
+.recommend .recommend-left ul li{
+	display: inline-block;
+	width: 100%;
+	line-height: 30px;
+	height: 30px;
+	border-bottom: 1px #ccc dashed;
+}
+.recommend .recommend-left ul li h4{
+	padding: 5px 0;
+	margin: 0;
+}
+.recommend .recommend-left ul li h4 > a:first-child{
+	color: rgb(176,196,222);
+	margin-right: 10px;
+	font-size: 10px;
+}
+.recommend .recommend-left ul li h4 > a:last-child{
+	font-size: 10px;
+}
+.recommend-left-detail{
+	display: -webkit-flex;
+	height: 100px;
+}
+.recommend-left-detail > a{
+	width: 75px;
+	float: left;
+	display: block;
+}
+.recommend-left-detail a img{
+	width: 75px;
+	height: 100px;
+}
+.recommend-left-detail .book-model{
+	flex: 1;
+	float: left;
+	margin-left: 5%;
+}
+.recommend-left-detail .book-model >a{
+	font-size: 12px;
+	color: red;
+	display: inline;
+	width: 100%;
+}
+.recommend-left-detail .book-model p{
+	margin: 2px 0;
+	height: 20px;
+	display: inline-block;
+	width: 100%;
+	font-size: 12px;
+	white-space: normal;
+}
+.recommend-left-detail .book-model p a{
+	display: inline-block;
+	font-size: 12px;
+	float: right;
+}
+.recommend .recommend-right{
+	width: 540px;
+	margin-left: 10px;
+	float: left;
+}
+.recommend-right .recommend-right-pic{
+	width: 40%;
+	padding: 5px;
+	height: 320px;
+	float: left;
+}
+.recommend-right-pic img{
+	width: 100%;
+	height: 100%;
+}
+.recommend-right .recommend-right-tags{
+	width: 60%;
+	height: 260px;
+	float: left;
+}
+.recommend-right-tags .recommend-right-tag{
+	margin: auto 0;
+	line-height: 56px;
+	font-size: 26px;
+	height: 50px;
+	line-height: 50px;
+	background-image: url('../img/story/tag-list.gif');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 100% 100%;
+	cursor: pointer;
+}
+.recommend-right-tag a{
+	padding: 0 10px;
+	text-decoration: none;
+	color: #000;
+	font-size: 18px;
+}
+.recommend-right-tag a span{
+	margin: 0 10px;
+	font-size: 15px;
+	color: rgb(143,188,143);
+}
+.recommend-right-summary{
+	width: 100%;
+	height: 70px;
+	padding: 5px;
+	transition: all .7s ease-in-out;
+	background-color: rgba(205,92,92,.7);
+}
+.recommend-right-summary p:first-child{
+	text-indent: 2em;
+	color: #000;
+	font-size: 14px;
+	/**
+		多行文本换行
+	*/
+	display: -webkit-box !important;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+.recommend-right-summary p:last-child{
+	color: #000;
+	font-size: 14px;
+	width: 100%;
+	margin: 0;
+	height: 20px;
+	line-height: 20px;
+}
+.recommend-right-summary p:last-child a{
+	float: right;
+	text-decoration: none;
+	padding: 0;
+}
+/**
+	type页面 new-book样式 默认样式 min-width: 996px
+*/
+.new-book{
+	padding: 10px 0;
+	width: 100%;
+	float: left;
+}
+.new-book .new-book-head{
+	font-size: 24px;
+	color: #a20e20;
+}
+.new-book-content{
+}
+/**
+	type页面 prime样式 默认样式 min-width: 996px
+*/
+.prime{
+	width: 100%;
+	float: left;
+}
+.prime .prime-head{
+	height: 40px;
+	font-size: 24px;
+	color: #a20e20;
+	line-height: 40px;
+	margin: 5px 0;
+}
+.prime .row{
+	padding: 0;
+	margin: 0;
+}
+.prime .row figure{
+	width: 20%;
+	float: left;
+	height: 250px;
+	padding: 0 5px 0 0;
+	margin: 0;
+	position: relative;
+}
+.prime .row figure a{
+	width: 100%;
+	height: 100%;
+}
+.prime .row figure a img{
+	width: 100%;
+	height: 100%;
+}
+.prime .row figure figcaption{
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #fff;
+	font-family: "微软雅黑";
+}
+.prime .row figure figcaption h2{
+	padding: 0;
+	margin: 0;
+}
+.prime .row figure figcaption p{
+	padding: 0;
+	margin: 0;
+}
+.type-list{
+	width: 100%;
+	float: left;
+	display: none;
+	display: -webkit-flex;
+}
+.type-list-head{
+	flex: 1;
+	padding: 10px 0;
+	line-height: 22px;
+	position: relative;
+	background-color: rgba(169,169,169,.15);
+}
+.type-list-head-left{
+	width: 10px;
+	height: 22px;
+	background-color: #2F4F4F;
+	border-radius: 2px;
+	float: left;
+	margin: 0 5px;
+}
+.type-list-head-right{
+	font-size: 16px;
+}
+.type-list-tab{
+	width: 100%;
+	float: left;
+	padding: 10px 0;
+	display: -webkit-flex;
+}
+.type-list-tab a{
+	flex: 1;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	color: #000;
+	font-size: 12px;
+	background-color: rgba(169,169,169,.15);
+	border-radius: 5px;
+	margin: 0 5px;
+}
+.type-list-tab .type-list-tab-active{
+	background-color: #ff4544;
+	color: #fff;
+}
+.type-list-items{
+	flex: 1;
+	float: left;
+	display: -webkit-flex;
+	flex-direction: column;
+}
+.type-list-item{
+	flex: 1;
+	display: -webkit-flex;
+	margin: 10px 5px;
+}
+.type-list-item a{
+	width: 74px;
+	height: 98px;
+	display: block;
+}
+.type-list-item a img{
+	width: 100%;
+	height: 100%;
+}
+.type-list-item-right{
+	flex: 1;
+	padding-left: 5px;
+	display: -webkit-flex;
+	flex-direction: column;
+}
+.type-list-item-name,
+.type-list-item-author,
+.type-list-item-latest,
+.type-list-item-summary{
+	flex: 1;
+	font-size: 12px;
+	color: #000;
+	line-height: 24.5px;
+}
+.type-list-item-name a{
+	display: inline;
+	color: #000;
+}
+.type-list-item-right span{
+	color: #787878;
+}
+.type-list-item-summary{
+	display: -webkit-box !important;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+}
+.type-list-more{
+	width: 98%;
+	float: left;
+	background-color: rgba(169,169,169,.15);
+	padding: 10px 5px;
+	margin: 0 1%;
+	border-radius: 5px;
+	border: 2px rgba(169,169,169,.3) solid;
+	text-align: center;
+}
+.type-list-more a{
+	color: rgba(0,0,0,.6);
+}
+@media screen and (max-width: 996px) and (min-width: 680px){
+	.recommend .recommend-left{
+		display: none;
+	}
+	.recommend .recommend-right{
+		width: 540px;
+		margin: 0 70px;
+		float: left;
+	}
+	.prime .row figure{
+		height: 180px;
+	}
+}
+@media screen and (max-width: 679px) and (min-width: 480px){
+	.recommend{
+		display: none;
+	}
+	.new-book{
+		display: none;	
+	}
+	.prime{
+		display: none;
+	}
+	.type-list{
+		display: block;
+	}
+}
+@media screen and (max-width: 479px) and (min-width: 320px){
+	.recommend{
+		display: none;
+	}
+	.new-book{
+		display: none;	
+	}
+	.prime{
+		display: none;
+	}
+	.type-list{
+		display: block;
+	}
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="44">
+	<rect width="140" height="44" fill="#fff2d9"></rect>
+	<text x="20" y="33"
+	    style="font-family: 微软雅黑;
+	        font-size: 33px;
+	        stroke: #000;
+	        fill: none;
+	        ">
+	    下一章
+	</text>
+</svg>

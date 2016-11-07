@@ -1,0 +1,279 @@
+body{
+	margin-top: 50px;
+	background-color: rgb(242,235,217);
+}
+h5{
+	font-weight: 700;
+}
+.navbar{
+	width: 100%;
+	background-color: rgb(234,209,180);
+}
+.main{
+	width: 100%;
+}
+.con{
+	width: 980px;
+	margin: 0 auto;
+	display: -webkit-flex;
+}
+.bg_color{
+	background-color: #fff2d9;
+}
+.bl-20{
+	height: 20px;
+}
+/**
+	book样式定义  默认样式 min-width=996
+*/
+.book{
+	padding: 20px 0;
+	display: -webkit-flex;
+}
+.book img{
+	float: left;
+	width: 105px;
+	height: 140px;
+	margin-right: 10px;
+}
+.book .book-right{
+	flex: 1;
+	left: 10%;
+	float: left;
+}
+.book h2{
+	padding: 5px;
+	margin: 0 0;
+}
+.book h2 a{
+	color: #526584;
+	font-weight: 700;
+	font-size: 14px;
+}
+.book p{
+	font-size: 12px;
+	padding: 0;
+	text-indent: 2em;
+	/**
+		多行文本换行
+	*/
+	display: -webkit-box !important;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 5;
+}
+/**
+	last-update样式 默认样式 min-width=996
+*/
+.last-update{
+	width: 100%;
+	float: left;
+	padding: 20px 0;
+}
+.last-update-title{
+	color: #a20e20;
+	font-size: 24px;
+}
+.latest-chapter-list{
+	width: 100%;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.latest-chapter-list li{
+	width: 100%;
+	display: -webkit-flex;
+	padding: 5px 0;
+	border-radius: 5px 5px;
+}
+.latest-chapter-list li a{
+	color: #333;
+	font-size: 12px;
+}
+.latest-chapter-list li:nth-child(odd){
+	background-color: rgb(228, 232, 234);
+}
+.latest-chapter-list li .latest-chapter-chap a:first-child{
+	color: #526584;
+	font-size: 14px;
+	margin-right: 10px;
+}
+.latest-chapter-head{
+	display: -webkit-flex;
+}
+.latest-chapter-head span{
+	color: #4b7b9c;
+	font-size: 12px;
+}
+.latest-chapter-kind,
+.latest-chapter-author,
+.latest-chapter-time{
+	flex: 1;
+	text-indent: 2em;
+	color: #787878;
+	font-size: 12px;
+	display: inline-block;
+}
+.latest-chapter-kind{
+	text-indent: 0;
+	padding-left: 5px;
+}
+.latest-chapter-head{
+	padding: 5px 0;
+}
+.latest-chapter-head .latest-chapter-chap{
+	text-indent: 5em;
+}
+.latest-chapter-chap{
+	flex: 5;
+	display: inline-block;
+}
+#top-list .search{
+	width: 160px;
+	float: left;
+	position: fixed;
+	top: 8px;
+	right: 10px;
+}
+@media screen and (max-width: 767px){
+	#top-list .search{
+		width: 60%;
+		float: left;
+		position: fixed;
+		top: 8px;
+		left: 66px;
+	}
+}
+@media screen and (max-width: 996px) and (min-width: 680px){
+	.con{
+		width: 680px;
+	}
+	.side{
+		display: none;
+	}
+	.book{
+		padding: 15px 0 0 0;
+	}
+	.book h2{
+		display: inline-block;
+		height: 20px;
+		padding: 0;
+		margin: 0 0;
+	}
+	.book h2 a{
+		color: #526584;
+		font-weight: 700;
+		font-size: 14px;
+		display: inline-block;
+	}
+}
+@media screen and (max-width: 679px) and (min-width: 480px){
+	.con{
+		width: 480px;
+	}
+	.side{
+		display: none;
+	}
+	.book{
+		padding: 15px;
+	}
+	.book img{
+		margin: 0 auto;
+	}
+	.book .book-right{
+		display: none;
+	}
+	.latest-chapter-author{
+		flex: 1.5;
+	}
+	.latest-chapter-kind{
+		flex: .5;
+	}
+	.latest-chapter-chap{
+		flex: 3;
+	}
+}
+@media screen and (max-width: 479px) and (min-width: 320px){
+	.con{
+		width: 320px;
+	}
+	.side{
+		display: none;
+	}
+	.book .book-right{
+		display: none;
+	}
+	.last-update{
+		display: none;
+	}
+}
+
+/**
+	side样式 默认样式 min-width=996
+*/
+.side{
+	width: 200px;
+	position: relative;
+	float: right;
+	margin-top: 15px;
+	margin-left: 20px;
+}
+.side .side-content > div{
+	border: 1px #d8d8d8 solid;
+	margin-bottom: 30px;
+	box-shadow: 2px 2px 1px rgba(0,0,0,.5);
+}
+.side h4{
+	padding: 15px 15px 0 15px;
+	margin: 0;
+	font-weight: 700;
+	color: rgb(220,20,60);
+}
+.side ul{
+	list-style: none;
+	padding: 15px;
+	margin: 0;
+	width: 100%;
+}
+.side ul li{
+	padding-bottom: 5px;
+	font-size: 12px;
+	border-bottom: 1px #ccc dashed;
+}
+.side ul li a{
+	margin-left: 5px;
+}
+.side ul li span:last-child{
+	float: right;
+	color: rgb(102,205,170);
+}
+.crumb{
+	padding-bottom: 15px;
+}
+.crumb span{
+	color: #cd3a00;
+	font-weight: 800;
+	line-height: 15px;
+}
+.crumb span a{
+	color: #002f4e;
+	font-weight: 800;
+	margin: 0 10px;
+}
+/**
+	all 网站页面样式
+*/
+.all-novels{
+	width: 100%;
+}
+.novel-list{
+	width: inherit;
+}
+.novel-list .h2{
+	padding: 2px;
+	width: inherit;
+	background-color: #ccc;
+	box-shadow: 0px 1px #eee;
+}

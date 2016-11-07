@@ -1,0 +1,52 @@
+<div class="side">
+				<div class="side-content">
+					<div class="side-recommened">
+						<h4>推荐榜</h4>
+						<ul>
+							<% billboard.recommend.map(function(story,i){%>
+								<li><span class="badge"><%=i+1%></span><a href="/story/summary/<%=story._id%>" title="<%=story.author%>"><%=story.storyname%></a><span><%=story.allrecommend%></span></li>
+							<%
+							})%>
+						</ul>
+					</div>
+					<div class="side-allclick">
+						<h4>点击榜</h4>
+						<ul>
+							<% billboard.click.map(function(story,i){%>
+								<li><span class="badge"><%=i+1%></span><a href="/story/summary/<%=story._id%>" title="<%=story.author%>"><%=story.storyname%></a><span><%=story.allclick%></span></li>
+							<%
+							})%>
+						</ul>
+					</div>
+					<div class="side-comment">
+						<h4>评论榜</h4>
+						<ul>
+							<li><span class="badge">5</span><a href="#" title="在中原行镖的日子">至尊纨绔</a><span>12496</span></li>
+							<li><span class="badge">5</span><a href="#" title="在中原行镖的日子">至尊纨绔</a><span>12496</span></li>
+							<li><span class="badge">5</span><a href="#" title="在中原行镖的日子">至尊纨绔</a><span>12496</span></li>
+							<li><span class="badge">5</span><a href="#" title="在中原行镖的日子">至尊纨绔</a><span>12496</span></li>
+							<li><span class="badge">5</span><a href="#" title="在中原行镖的日子">至尊纨绔</a><span>12496</span></li>
+							<li><span class="badge">5</span><a href="#" title="在中原行镖的日子">至尊纨绔</a><span>12496</span></li>
+							<li><span class="badge">5</span><a href="#" title="在中原行镖的日子">至尊纨绔</a><span>12496</span></li>
+							<li><span class="badge">5</span><a href="#" title="在中原行镖的日子">至尊纨绔</a><span>12496</span></li>
+							<li><span class="badge">5</span><a href="#" title="在中原行镖的日子">至尊纨绔</a><span>12496</span></li>
+							<li><span class="badge">5</span><a href="#" title="在中原行镖的日子">至尊纨绔</a><span>12496</span></li>
+						</ul>
+					</div>
+					<div class="side-black">
+						<h4>差评榜</h4>
+						<ul>
+							<li><span class="badge">5</span><a href="#" title="在中原行镖的日子">至尊纨绔</a><span>12496</span></li>
+							<li><span class="badge">5</span><a href="#" title="在中原行镖的日子">至尊纨绔</a><span>12496</span></li>
+							<li><span class="badge">5</span><a href="#" title="在中原行镖的日子">至尊纨绔</a><span>12496</span></li>
+							<li><span class="badge">5</span><a href="#" title="在中原行镖的日子">至尊纨绔</a><span>12496</span></li>
+							<li><span class="badge">5</span><a href="#" title="在中原行镖的日子">至尊纨绔</a><span>12496</span></li>
+							<li><span class="badge">5</span><a href="#" title="在中原行镖的日子">至尊纨绔</a><span>12496</span></li>
+							<li><span class="badge">5</span><a href="#" title="在中原行镖的日子">至尊纨绔</a><span>12496</span></li>
+							<li><span class="badge">5</span><a href="#" title="在中原行镖的日子">至尊纨绔</a><span>12496</span></li>
+							<li><span class="badge">5</span><a href="#" title="在中原行镖的日子">至尊纨绔</a><span>12496</span></li>
+							<li><span class="badge">5</span><a href="#" title="在中原行镖的日子">至尊纨绔</a><span>12496</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>

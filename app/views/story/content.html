@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta charset="utf-8">
+	<title><%= title %></title>
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/bower_components/bootstrapvalidator/dist/css/bootstrapvalidator.min.css">
+    <link rel="stylesheet" href="/bower_components/normalize/normalize.css">
+    <link rel="stylesheet" href="/css/story.css">
+    <link rel="stylesheet" href="/css/content.css">
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+
+</head>
+<%-include header.html %>
+	<div class="main">
+		<div class="con">
+			<div class="content bg_color">
+				<div class="content-body">
+					<div class="crumb">
+						<span>
+							<a href="/story">星门</a>><a href="/story/type/<%=book.number%>"><%=book.categoryname%></a>><a><%=book.storyname%></a>
+						</span>
+					</div>
+					<h3>正文</h3>
+					<div class="content-title text-center h1">
+						<%=content.chaptername%>
+					</div>
+					<div class="content-intro text-center">
+						  <h3><a href="/story/summary/<%=book._id%>"><%=book.storyname%></a></h3><span>作者：<a href="#"><%=book.author%></a></span>
+					</div>
+					<div class="content-latest-update text-center">
+						<span>更新时间：<%=moment(book.meta.updateAt).format('MM/DD/YY HH:mm:ss')%></span>
+					</div>
+					<div class="content-panel">
+						<div class="bl-20">
+						</div>
+						<div class="shadow"></div>
+						<div class="content-panel-body">
+							<%-content.chaptercontent%>
+						</div>
+						<div class="shadow"></div>
+						<div class="bl-20"></div>
+						<div class="quickly">
+							<a class="prev" href="#">上一章</a>
+							<a class="back" href="#">目录</a>
+							<a class="next" href="#">下一章</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<%-include footer.html %>

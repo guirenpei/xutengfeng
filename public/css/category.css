@@ -1,0 +1,116 @@
+/**
+	category 页面样式
+*/
+.category-content{
+	padding: 20px 25px 50px 25px;
+	box-shadow: 1px 1px 1px #fff;
+}
+.category-title span{
+	font-size: 12px;
+	font-weight: 800px;
+}
+.category-title span a{
+	text-decoration: none;
+	color: #000;
+	font-weight: 900;
+}
+.category-intro span{
+	margin-right: 10px;
+	background-image: url('../img/story/icon_all.gif');
+	background-repeat: no-repeat;
+	background-position: -273px -357px;
+	width: 41px;
+	height: 18px;
+	line-height: 18px;
+	text-align: center;
+	display: inline-block;
+	zoom: 1;
+	color: #fff;
+}
+.shadow{
+	background: url('../img/story/shadow.png') no-repeat center top;
+	height: 6px;
+	margin: 10 auto;
+	overflow: hidden;
+}
+.category-chapter-list table{
+	width: 100%;
+}
+.category-chapter-list tr{
+	width: inherit;
+	border-bottom: 1px solid #e4e1da;
+}
+.category-chapter-list td{
+	width: 33%;
+	padding: 6px 0;
+	padding-left: 30px;
+	line-height: 22px;
+}
+.category-chapter-list td a{
+	color: #24272c;
+	zoom: 1;
+}
+.category-chapter-list td a:hover{
+	color: #ac2231;
+}
+.category-chapter-list td a:visited{
+	color: #a0a3a7;
+}
+.category-list{
+	display: none;
+	float: left;
+	width: 100%;
+}
+@media screen and (max-width: 679px) and (min-width: 320px){
+	.category-content{
+		display: none;
+	}
+	.category-list{
+		display: block;
+	}
+	.category-list-top,
+	.category-list-bottom{
+		width: 100%;
+		float: left;
+		padding: 10px;
+		display: -webkit-flex;
+	}
+	.category-list-content{
+		width: 100%;
+		float: left;
+		font-size: 14px;
+		display: -webkit-flex;
+		flex-direction: column;
+	}
+	.category-list-content-item{
+		flex: 1;
+		font-size: 14px;
+		padding: 10px 10px;
+	}
+	.category-list-content-item:not(:last-child){
+		border-bottom: 2px rgba(169,169,169,.15) solid;
+	}
+	.category-list-content-item a{
+		color: #000;
+	}
+	.category-list-content-item span{
+		display: block;
+		float: right;
+		font-size: 18px;
+	}
+	.category-list-select{
+		height: 40px;
+		flex: 1;
+	}
+	.category-list-top a,
+	.category-list-bottom a{
+		display: inline;
+		height: 34px;
+		line-height: 34px;
+		color: rgba(0,0,0,.8);
+		font-size: 12px;
+		border-radius: 5px;
+		border: 1px rgba(169,169,169,.15) solid;
+		padding: 0 10px;
+	}
+}

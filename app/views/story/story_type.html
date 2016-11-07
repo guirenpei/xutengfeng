@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta charset="utf-8">
+	<title><%= title %></title>
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/bower_components/bootstrapvalidator/dist/css/bootstrapvalidator.min.css">
+    <link rel="stylesheet" href="/bower_components/normalize/normalize.css">
+    <link rel="stylesheet" href="/css/story.css">
+    <link rel="stylesheet" href="/css/type.css">
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+
+</head>
+<%-include header.html %>
+	<div class="main">
+		<div class="con">
+			<div class="type">
+				<div class="recommend">
+					<div class="recommend-left">
+						<div class="recommend-left-head">本周强推榜</div>
+						<ul>
+							<% strongrecommend.map(function(story,i){
+								if(i < 1){%>
+									<div class="recommend-left-detail">
+										<a href="#"><img src="http://static.zongheng.com/upload/cover/2016/10/1475899669301.jpg">
+										</a>
+										<div class="book-model">
+											<a href="#"><%=story.storyname%></a>
+											<p>作者：<a href="#"><abbr title="<%=story.author%>"><%=(story.author).substr(0,4)%></abbr></a></p>
+											<p>类型：<a href="/story/type/<%=story.number%>"><abbr title="<%=story.categoryname%>"><%=(story.categoryname).substr(0,4)%></abbr></a></p>
+											<p><a href="/story/summary/<%=story._id%>">【阅读】</a></p>
+										</div>
+									</div>
+								<%}else{%>
+								<li>
+									<h4><a href="#"><%=story.categoryname%></a><a href="/story/summary/<%=story._id%>"><%=story.storyname%></a></h4>
+								</li>
+							<%}
+							})%>
+						</ul>
+					</div>
+					<div class="recommend-right">
+						<div class="recommend-right-pic">
+							<a href="/story/summary/<%=adrecommend[0]._id%>"><img src="<%=adrecommend[0].image%>"></a>
+						</div>
+						<div class="recommend-right-tags">
+							<% adrecommend.map(function(story,i){%>
+								<div class="recommend-right-tag" data-summary="<%=story.summary%>" data-pic="<%=story.image%>">
+								<a href="/story/summary/<%=story._id%>"><%=story.storyname%><span>作者：<%=story.author%></span></a>
+							</div>
+							<%
+							})%>
+						</div>
+					</div>
+				</div>
+				<div class="new-book">
+					<div class="new-book-head">新书精选</div>
+					<div class="new-book-content">
+							<% newbook.map(function(story,i){
+								if(i % 3 == 0){%>
+									<div class="row">
+								<%}
+								%>
+								<div class="col-md-4 new-book-list">
+									<div class="book">
+										<img src="<%=story.image%>">
+										<div class="book-right">
+											<h2 class="text-center"><a href="/story/summary/<%=story._id%>"><%=story.storyname%></a></h2>
+											<p><%=story.summary%></p>
+										</div>
+									</div>
+								</div>
+							<%
+								var k = i+1
+								if(k % 3 == 0){%>
+									</div>
+								<%}
+							})%>
+					</div>
+				</div>
+				<div class="prime">
+					<div class="prime-head">热销作品</div>
+					<div class="row">
+						<% prime.map(function(story,i){%>
+							<figure><a href="/story/summary/<%=story._id%>"><img src="<%=story.image%>"></a><figcaption><h2><%=story.storyname%></h2><p>作者：<%=story.author%></p></figcaption></figure>
+						<%
+						})%>
+					</div>
+				</div>
+				<div class="type-list">
+					<div class="type-list-head">
+						<div class="type-list-head-left"></div>
+						<div class="type-list-head-right"><%=title%></div>
+					</div>
+					<div class="type-list-tab">
+						<a class="type-list-tab-active" href="javascript:void(0)">热门</a>
+						<a href="javascript:void(0)">新书</a>
+						<a href="javascript:void(0)">免费</a>
+						<a href="javascript:void(0)">完本</a>
+					</div>
+					<div class="type-list-items">
+						<div class="type-list-item">
+							<a href="javascript:void(0)"><img src="<%=prime[0].image%>"></a>
+							<div class="type-list-item-right">
+								<div class="type-list-item-name"><a href="/story/summary/<%=prime[0]._id%>"><%=prime[0].storyname%></a></div>
+								<div class="type-list-item-author"><span>作者：</span><%=prime[0].author%></div>
+								<div class="type-list-item-latest"><span>更新至：</span>第一千六百三十二章</div>
+								<div class="type-list-item-summary"><span>简介：</span><%=prime[0].summary%></div>
+							</div>
+						</div>
+						<div class="type-list-item">
+							<a href="javascript:void(0)"><img src="<%=prime[0].image%>"></a>
+							<div class="type-list-item-right">
+								<div class="type-list-item-name"><%=prime[0].storyname%></div>
+								<div class="type-list-item-author"><span>作者：</span><%=prime[0].author%></div>
+								<div class="type-list-item-latest"><span>更新至：</span>第一千六百三十二章</div>
+								<div class="type-list-item-summary"><span>简介：</span><%=prime[0].summary%></div>
+							</div>
+						</div>
+						<div class="type-list-item">
+							<a href="javascript:void(0)"><img src="<%=prime[0].image%>"></a>
+							<div class="type-list-item-right">
+								<div class="type-list-item-name"><%=prime[0].storyname%></div>
+								<div class="type-list-item-author"><span>作者：</span><%=prime[0].author%></div>
+								<div class="type-list-item-latest"><span>更新至：</span>第一千六百三十二章</div>
+								<div class="type-list-item-summary"><span>简介：</span><%=prime[0].summary%></div>
+							</div>
+						</div>
+						<div class="type-list-item">
+							<a href="javascript:void(0)"><img src="<%=prime[0].image%>"></a>
+							<div class="type-list-item-right">
+								<div class="type-list-item-name"><%=prime[0].storyname%></div>
+								<div class="type-list-item-author"><span>作者：</span><%=prime[0].author%></div>
+								<div class="type-list-item-latest"><span>更新至：</span>第一千六百三十二章</div>
+								<div class="type-list-item-summary"><span>简介：</span><%=prime[0].summary%></div>
+							</div>
+						</div>
+						<div class="type-list-item">
+							<a href="javascript:void(0)"><img src="<%=prime[0].image%>"></a>
+							<div class="type-list-item-right">
+								<div class="type-list-item-name"><%=prime[0].storyname%></div>
+								<div class="type-list-item-author"><span>作者：</span><%=prime[0].author%></div>
+								<div class="type-list-item-latest"><span>更新至：</span>第一千六百三十二章</div>
+								<div class="type-list-item-summary"><span>简介：</span><%=prime[0].summary%></div>
+							</div>
+						</div>
+						<div class="type-list-item">
+							<a href="javascript:void(0)"><img src="<%=prime[0].image%>"></a>
+							<div class="type-list-item-right">
+								<div class="type-list-item-name"><%=prime[0].storyname%></div>
+								<div class="type-list-item-author"><span>作者：</span><%=prime[0].author%></div>
+								<div class="type-list-item-latest"><span>更新至：</span>第一千六百三十二章</div>
+								<div class="type-list-item-summary"><span>简介：</span><%=prime[0].summary%></div>
+							</div>
+						</div>
+					</div>
+					<div class="type-list-more">
+						<a href="javascript:void(0)">查看更多</a>
+					</div>
+				</div>
+				<div class="last-update">
+					<div class="last-update-title">
+						最新小说更新
+					</div>
+					<div class="latest-chapter">
+						<div class="tabA">
+							<div class="latest-chapter-head">
+								<span class="latest-chapter-kind">类别</span>
+								<span class="latest-chapter-chap">书名/章节</span>
+								<span class="latest-chapter-author">作者</span>
+								<span class="latest-chapter-time">更新时间</span>
+							</div>
+							<ul class="latest-chapter-list">
+								<% latestbook.map(function(story,i){%>
+									<li>
+										<span class="latest-chapter-kind"><%=(story.categoryname).substr(0,2)%></span>
+										<span class="latest-chapter-chap"><%=story.storyname%></span>
+										<span class="latest-chapter-author"><%=story.author%></span>
+										<span class="latest-chapter-time"><%=moment(story.meta.updateAt).format('hh : mm')%></span>
+									</li>
+								<%
+								})%>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<%-include side.html %>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$('.recommend-right-tag').map(function(i,el){
+				var that = $(this)
+				var summary = $(el).attr('data-summary')
+				var pic = $(el).attr('data-pic')
+				var div = $("<div class='recommend-right-summary'><p>"+summary+"</p><p><a href='#'>【收藏】</><a href='#'>【阅读】</a></p></div>")
+				that.on('mouseover',function(){
+					$('.recommend-right-pic').find('img').attr('src',pic)
+					$('.recommend-right-tag').css('background-image','url('+"/img/story/tag-list.gif"+')')
+					that.css('background-image','url('+"/img/story/tag-list-hover.gif"+')')
+					$('.recommend-right-summary').remove()
+					that.after(div)
+				})
+			})
+		})
+	</script>
+<%-include footer.html %>

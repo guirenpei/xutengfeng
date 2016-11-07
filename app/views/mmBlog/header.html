@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title><%= title %></title>
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/bower_components/bootstrapvalidator/dist/css/bootstrapvalidator.min.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+	<div class="row">
+        <div class="page-header clearfix">
+            <h1><%= title %></h1>
+            <div class="col-md-4">
+                <small>重度科幻迷</small>
+            </div>
+            <div class="col-md-8">
+                <form method="GET" action="/results">
+                    <div class="input-group col-sm-4 pull-right">
+                        <input class="form-control" type="text" name="q"></input>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">搜索</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>

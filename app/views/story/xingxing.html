@@ -1,0 +1,287 @@
+<!doctype html>
+<html>
+<head>
+<meta chraset="UTF-8">
+</head>
+<style>
+body{
+background:black;
+}
+#xi1{
+            width:800px;
+            height:800px;
+            border-radius:50%;
+            border:1px dashed #ccc;
+            position:relative;
+            top:100px;
+            left:100px;
+        }
+
+        #ri{
+            width:80px;
+            height:80px;
+            border-radius:50%;
+            background:red;
+            position:absolute;
+            left:360px;
+            top:360px;
+            box-shadow:0px 0px 70px red;
+        }
+        #water{
+            width:13px;
+            height:13px;
+            background:#CCC;
+            position:absolute;
+            border-radius:50%;
+            left:6px;
+            top:6px;
+            transform-origin:43px 42px;
+            transform:rotate(0deg);
+            box-shadow:0px 0px 10px #CCC;
+        }
+        #water1{
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            border:1px solid #ccc;
+            position:absolute;
+            left:350px;
+            top:350px;
+        }
+        #jin{
+            width:13px;
+            height:13px;
+            background:#A08358;
+            position:absolute;
+            border-radius:50%;
+            left:16px;
+            top:16px;
+            transform-origin:60px 60px;
+            transform:rotate(0deg);
+            box-shadow:0px 0px 20px #A08358;
+        }
+        #jin1{
+            width:150px;
+            height:150px;
+            border-radius:50%;
+            border:1px solid #ccc;
+            position:absolute;
+            left:325px;
+            top:325px;
+        }
+        #earth{
+            width:18px;
+            height:18px;
+            background:#0D3B62;
+            position:absolute;
+            border-radius:50%;
+            left:28px;
+            top:28px;
+            transform-origin:98px 96px;
+            transform:rotate(0deg);
+            box-shadow:0px 0px 20px #0D3B62;
+        }
+        #earth1{
+            width:250px;
+            height:250px;
+            border-radius:50%;
+            border:1px solid #ccc;
+            position:absolute;
+            left:275px;
+            top:275px;
+        }
+        #yue{
+            width:13px;
+            height:13px;
+            background:#747471;
+            position:absolute;
+            border-radius:50%;
+            left:34px;
+            top:34px;
+            transform-origin:106px 107px;
+            transform:rotate(0deg);
+            box-shadow:0px 0px 10px #747471;
+        }
+        #yue1{
+            width:280px;
+            height:280px;
+            border-radius:50%;
+            border:1px solid gray;
+            position:absolute;
+            left:260px;
+            top:260px;
+        }
+        #huo{
+            width:26px;
+            height:26px;
+            background:#DA3C00;
+            position:absolute;
+            border-radius:50%;
+            left:36px;
+            top:36px;
+            transform-origin:130px 130px;
+            transform:rotate(0deg);
+            box-shadow:0px 0px 10px #DA3C00;
+        }
+        #huo1{
+            width:330px;
+            height:330px;
+            border-radius:50%;
+            border:1px solid gray;
+            position:absolute;
+            left:235px;
+            top:235px;
+        }
+
+        #mu{
+            width:40px;
+            height:40px;
+            background:#EAEA93;
+            position:absolute;
+            border-radius:50%;
+            left:46px;
+            top:46px;
+            transform-origin:177px 174px;
+            transform:rotate(0deg);
+            box-shadow:0px 0px 20px #EAEA93;
+        }
+        #mu1{
+            width:450px;
+            height:450px;
+            border-radius:50%;
+            border:1px solid gray;
+            position:absolute;
+            left:175px;
+            top:175px;
+        }
+        #tu{
+            width:40px;
+            height:40px;
+            background:#A27634;
+            position:absolute;
+            border-radius:50%;
+            left:58px;
+            top:58px;
+            transform-origin:210px 210px;
+            transform:rotate(0deg);
+            box-shadow:0px 0px 10px #A27634;
+        }
+        #tu1{
+            width:540px;
+            height:540px;
+            border-radius:50%;
+            border:1px solid gray;
+            position:absolute;
+            left:130px;
+            top:130px;
+        }
+        #tw{
+            width:48px;
+            height:48px;
+            background:#395A67;
+            position:absolute;
+            border-radius:50%;
+            left:66px;
+            top:66px;
+            transform-origin:256px 256px;
+            transform:rotate(0deg);
+            box-shadow:0px 0px 10px #395A67;
+        }
+        #tw1{
+            width:640px;
+            height:640px;
+            border-radius:50%;
+            border:1px solid gray;
+            position:absolute;
+            left:80px;
+            top:80px;
+        }
+
+        #hw{    
+            width:56px;
+            height:56px;
+            background:#509DBC;
+            position:absolute;
+            border-radius:50%;
+            left:90px;
+            top:90px;
+            transform-origin:315px 310px;
+            transform:rotate(0deg);
+            box-shadow:0px 0px 20px #509DBC;
+        }
+        #hw1{
+            width:800px;
+            height:800px;
+            border-radius:50%;
+            border:1px solid gray;
+            position:absolute;
+            left:0px;
+            top:0px;
+        }
+    </style>
+<body>
+    <div id="xi1">
+        <div id="ri"></div>
+        <div id="water1"><div id="water"></div><!--水星--></div><!--水星轨迹-->
+        <div id="jin1"><div id="jin"></div><!--金星--></div><!--金星轨迹-->
+        <div id="earth1"><div id="earth"></div><!--地球--></div><!--地球轨迹-->
+        <div id="yue1"><div id="yue"></div><!--月球--></div><!--月球轨迹-->
+        <div id="huo1"><div id="huo"></div><!--火星--></div><!--火星轨迹-->
+        <div id="mu1"><div id="mu"></div><!--木星--></div><!--木星轨迹-->
+        <div id="tu1"><div id="tu"></div><!--土星--></div><!--土星轨迹-->
+        <div id="tw1"><div id="tw"></div><!--天王星--></div><!--天王星轨迹-->
+        <div id="hw1"><div id="hw"></div><!--海王星--></div><!--海王星轨迹-->
+    </div>
+    <script>
+        //获取九大行星
+        var yue = document.getElementById('hw');
+        var tw = document.getElementById('tw');
+        var tu = document.getElementById('tu');
+        var mu = document.getElementById('mu');
+        var huo = document.getElementById('huo');
+        var yue = document.getElementById('yue');
+        var earth = document.getElementById('earth');
+        var jin = document.getElementById('jin');
+        var water = document.getElementById('water');
+
+            var jd= 0;
+            var jd_1= 0;
+            var jd_2= 0;
+            var jd_3= 0;
+            var jd_4= 0;
+            var jd_5= 0;
+            var jd_6= 0;
+            var jd_7= 0;
+            var jd_8= 0;
+            function autoRun_1 (){//匿名函数来调用计时器
+            run = setInterval(function(){
+                jd+=0.16;//让角度每次+10;
+                jd_1+=0.1;
+                jd_2+=0.12;
+                jd_3+=0.14;
+                jd_4+=0.21;
+                jd_5+=0.17;
+                jd_6+=0.1;
+                jd_7+=0.12;
+                jd_8+=0.13;
+                hw.style.transform = 'rotate('+jd+'deg)';//重新赋值给行星的角度
+                tw.style.transform = 'rotate('+jd_1+'deg)';
+                tu.style.transform = 'rotate('+jd_2+'deg)';
+                mu.style.transform = 'rotate('+jd_3+'deg)';
+                huo.style.transform = 'rotate('+jd_4+'deg)';
+                yue.style.transform = 'rotate('+jd_5+'deg)';
+                earth.style.transform = 'rotate('+jd_6+'deg)';
+                jin.style.transform = 'rotate('+jd_7+'deg)';
+                water.style.transform = 'rotate('+jd_8+'deg)';
+
+            },1)
+        }
+        autoRun_1();
+
+    </script>
+</body>
+</html>
+
+作者： 帅旗 
+链接：http://www.imooc.com/article/11401
+来源：慕课网

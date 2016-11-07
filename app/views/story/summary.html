@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta charset="utf-8">
+	<title><%= title %></title>
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/bower_components/bootstrapvalidator/dist/css/bootstrapvalidator.min.css">
+    <link rel="stylesheet" href="/bower_components/normalize/normalize.css">
+    <link rel="stylesheet" href="/css/story.css">
+    <link rel="stylesheet" href="/css/summary.css">
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+
+</head>
+<%-include header.html %>
+	<div class="main">
+		<div class="con">
+			<div class="summary">
+				<div class="summary-summary">
+					<div class="panel panel-warning">
+						  <div class="panel-heading">星门 > <%=book.categoryname%>> > <%=book.storyname%></div>
+						  <div class="panel-body panel-warning">
+						    <div class="cover">
+						    	<img src="<%=book.image%>">
+						    </div>
+						    <div class="summary-right">
+						    	<div class="row text-center">
+						    		<span class="h1"><%=book.storyname%></span>
+						    	</div>
+						    	<div class="row">
+						    		<pre>作者：<%=book.author%> ·分类：<%=book.categoryname%> ·字数：2179362字</pre>
+						    	</div>
+						    	<div class="row sum">
+						    		<%=book.summary%>
+						    	</div>
+						    	<div class="row key">读者标签：
+						    		<kbd>返古生物</kbd>
+						    		<kbd>虫族升级</kbd>
+						    		<kbd>虫族升级</kbd>
+						    		<kbd>末世</kbd>
+						    		<kbd>暗黑野蛮人</kbd>
+						    	</div>
+						    	<div class="row book-btn">
+						    		<div class="col-md-4 col-xs-4 book-btn-group">
+						    			<button type="button" class="btn btn-danger btn_continue">继续阅读</button></div>
+						    		<div class="col-md-4 col-xs-4 book-btn-group">
+						    			<button type="button" class="btn btn-success btn_collection" ><a href="/story/category/<%=book._id%>">收藏</a></button></div>
+						    		<div class="col-md-4 col-xs-4 book-btn-group">
+						    			<button type="button" class="btn btn-info btn_category"><a href="/story/category/<%=book._id%>">目录</a></button>
+						    		</div>
+						    	</div>
+						    </div>
+						    <div class="total">
+						    		<div class="month">
+						    			<div class="row">
+						    				<button type="button" class="btn btn-default">推荐票</button>
+						    			</div>
+						    			<div class="row">
+						    				<div class="col-md-6 col-xs-6">月推荐 <%=book.monthrecommend%></div>
+						    				<div class="col-md-6 col-xs-6">月点击 <%=book.monthclick%></div>
+						    			</div>
+						    		</div>
+						    		<div class="all">
+						    			<div class="row">总点击 <%=book.allclick%></div>
+						    			<div class="row">总收藏 <%=book.allcollection%></div>
+						    			<div class="row">总推荐 <%=book.allrecommend%></div>
+						    			<div class="row">评论数 <%=book.commentsnumber%></div>
+						    		</div>
+						    </div>
+						  </div>
+					</div>
+				</div>
+				<div class="summary-content">
+					<div class="panel">
+						<div class="panel-body panel-warning">
+							<div class="new">最新章节</div>
+							<div class="last">
+								<a class="last-title" href="#">作者：最新章节<br>
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="summary-comment">
+					<div class="panel">
+						<div class="panel-body panel-warning">
+							评论功能
+						</div>
+					</div>
+				</div>
+				<%-include side.html %>
+			</div>
+			<div class="summary-web">
+				<div class="summary-web-book">
+					<div class="summary-web-book-detail">
+						<a href="#"><img src="<%=book.image%>"></a>
+						<div class="summary-web-book-detail-right">
+							<div class="book-name"><%=book.storyname%></div>
+							<div class="book-author">作者：<span><%=book.author%></span></div>
+							<div class="book-category">分类：<span><%=(book.categoryname).substr(0,2)%></span></div>
+							<div class="book-text-number">字数：<span>467567</span></div>
+							<div class="book-visted">已有<span><%=book.allclick%>人次</span> 读过此书</div>
+						</div>
+						<div class="collection">&nbsp;+&nbsp;书架</div>
+					</div>
+					<div class="summary-web-book-btn">
+						<a href="/story/category/<%=book._id%>" class="summary-web-book-btn-read">
+							立即阅读
+						</a>
+						<a class="summary-web-book-btn-category">
+							查看目录
+						</a>
+					</div>
+					<div class="summary-web-book-last">
+						<span>最新</span>
+						第一千二百二十六章
+						<span>一小时前</span>
+					</div>
+				</div>
+				<div class="summary-web-summary">
+					<div class="summary-web-summary-head">
+						<div class="summary-web-summary-head-left"></div>
+						<div class="summary-web-summary-head-right">作品简介</div>
+					</div>
+					<div class="summary-web-summary-content">
+						<%=book.summary%>
+					</div>
+					<div class="summary-web-summary-tag">
+						<span>标签：</span>
+						<span>热血</span>
+						<span>爽文</span>
+						<span>争霸</span>
+					</div>
+				</div>
+				<div class="summary-web-support">
+					<div class="summary-web-summary-head">
+						<div class="summary-web-summary-head-left"></div>
+						<div class="summary-web-summary-head-right">支持本书</div>
+					</div>
+					<div class="summary-web-summary-vote">
+						<div class="vote-image">
+							<div class="vote-round"><div class="vote-ground-big"><div class="vote-ground-small">月</div></div></div>
+							<div class="vote-round"><div class="vote-ground-big"><div class="vote-ground-small">月</div></div></div>
+							<div class="vote-round"><div class="vote-ground-big"><div class="vote-ground-small">抽</div></div></div>
+						</div>
+						<div class="vote-text">
+							<div class="vote-text-list">投一张月票<span>500星门币</span></div>
+							<div class="vote-text-list">投11张月票<span>5000星门币</span></div>
+							<div class="vote-text-list">抽月票<span>100星门币</span></div>
+						</div>
+					</div>
+					<div class="summary-web-summary-vote-list">
+						<div class="vote"><div class="vote-left">本书排在月票榜的第<span>36</span>位，赶快支持下</div><a href="#">投张月票</a></div>
+						<div class="vote"><div class="vote-left">投张推荐票来表达你对本书的态度吧</div><a href="#">投推荐票</a></div>
+						<div class="vote"><div class="vote-left">更多种方式为作者捧场</div><a href="#">更多捧场</a></div>
+					</div>
+				</div>
+				<div class="summary-web-category">
+					<div class="summary-web-summary-head">
+						<div class="summary-web-summary-head-left"></div>
+						<div class="summary-web-summary-head-right">作品目录<span>(共369章)</span><a href="javascript:void(0)">反序</a></div>
+					</div>
+					<div class="summary-web-category-list">
+						<div class="summary-web-category-list-item">第一章：行政组<span>></span></div>
+						<div class="summary-web-category-list-item">第一章：行政组<span>></span></div>
+						<div class="summary-web-category-list-item">第一章：行政组<span>></span></div>
+						<div class="summary-web-category-list-item">第一章：行政组<span>></span></div>
+						<div class="summary-web-category-list-item">第一章：行政组<span>></span></div>
+					</div>
+					<div class="summary-web-category-more">
+						<a href="javascript:void(0)">进入作品目录 查看更多</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<%-include footer.html %>

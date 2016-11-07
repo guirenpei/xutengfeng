@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta charset="utf-8">
+	<title><%= title %></title>
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/bower_components/bootstrapvalidator/dist/css/bootstrapvalidator.min.css">
+    <link rel="stylesheet" href="/bower_components/normalize/normalize.css">
+    <link rel="stylesheet" href="/css/story.css">
+    <link rel="stylesheet" href="/css/category.css">
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+
+</head>
+<%-include header.html %>
+	<div class="main">
+		<div class="con">
+			<div class="category-content">
+				<div class="crumb">
+					<span>
+						<a href="/story">星门</a>><a href="/story/type/<%=book.number%>"><%=book.categoryname%></a>><a><%=book.storyname%></a>
+					</span>
+				</div>
+				<div class="category-title text-center h1">
+					<%=book.storyname%> <span>作者：<a href="#"><%=book.author%></a></span>
+				</div>
+				<div class="category-intro text-center">
+					<span>倒序↓</span><a href="#">直达底部</a>
+				</div>
+				<div class="category-chapter-panel">
+					<div class="chap_list text-center">
+						<h5>正文</h5>
+					</div>
+					<div class="shadow"></div>
+					<div class="category-chapter-list">
+						<table cellspacing="0" cellpadding="0" border="0">
+							<tbody>
+								<% chapters.map(function(story,i){
+									if(i%3 == 0){%>
+										<tr>
+									<%
+									}%>
+										<td><a href="/story/content/<%=story.chapterlink%>?_id=<%=book._id%>"><%=story.chapter%></a></td>
+									<%
+										var k = i+1
+										if(k%3 == 0){%>
+											</tr>
+										<%}
+									})%>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="category-list">
+					<div class="category-list-top">
+						<div class="category-list-select">
+							<select class="form-control" readonly>
+								<option value="1" selected="selected">1</option>
+								<option value="2" >2</option>
+								<option value="3" >3</option>
+								<option value="4" >4</option>
+								<option value="5" >5</option>
+							</select>
+						</div>
+						<a href="javascript:void(0)">↓&nbsp;反序</a>
+					</div>
+					<div class="category-list-content">
+						<div class="category-list-content-item"><a href="/story/content/<%=chapters[0].chapterlink%>?_id=<%=book._id%>"><%=chapters[0].chapter%></a><span>></span></div>
+						<div class="category-list-content-item"><a href="/story/content/<%=chapters[0].chapterlink%>?_id=<%=book._id%>"><%=chapters[0].chapter%></a><span>></span></div>
+						<div class="category-list-content-item"><a href="/story/content/<%=chapters[0].chapterlink%>?_id=<%=book._id%>"><%=chapters[0].chapter%></a><span>></span></div>
+						<div class="category-list-content-item"><a href="/story/content/<%=chapters[0].chapterlink%>?_id=<%=book._id%>"><%=chapters[0].chapter%></a><span>></span></div>
+					</div>
+					<div class="category-list-bottom">
+						<a href="javascript:void(0)"><<上一页</a>
+						<div class="category-list-select">
+							<select class="form-control" readonly>
+								<option value="1" selected="selected">1</option>
+								<option value="2" >2</option>
+								<option value="3" >3</option>
+								<option value="4" >4</option>
+								<option value="5" >5</option>
+							</select>
+						</div>
+						<a href="javascript:void(0)">下一页>></a>
+					</div>
+			</div>
+		</div>
+	</div>
+<%-include footer.html %>
