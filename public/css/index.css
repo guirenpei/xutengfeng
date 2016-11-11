@@ -1,0 +1,78 @@
+.index-main{
+  width: 100%;
+  height: 768px;
+}
+.index{
+  position: relative;
+  widows: 100%;
+  height: 100%;
+}
+.object{
+  width: 50%;
+  height: 50%;
+  float: left;
+  position: relative;
+}
+.object:first-child{
+  background-color: #eeffee;
+}
+.object:nth-child(2){
+  background-color: #ffeeff;
+}
+.object:nth-child(3){
+  background-color: #ccffcc;
+}
+.object:last-child{
+  background-color: #ffccff;
+}
+.box{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.box a{
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  top: 100px;
+  width: 200px;
+  height: 80px;
+  background-color: green;
+  text-align: center;
+  line-height: 80px;
+  color: #fff;
+  text-decoration: none;
+}
+.title{
+  position: relative;
+  left: auto;
+  top: 80px;
+  opacity: 1;
+  transform: scale(.2);
+  transition: all 1s ease-in-out;
+}
+.object .caption{
+  position: absolute;
+  transition: all 1s ease-in-out;
+  opacity: 0.5;
+}
+.box-story:hover .caption{
+  opacity: 1;
+}
+.line{
+  display: block;
+  position: absolute;
+  background-color: none;
+}
+.button:hover .line{
+  background-color: #fff;
+}
+
+
+
+
+
+
+
+
+

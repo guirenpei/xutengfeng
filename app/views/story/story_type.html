@@ -6,14 +6,12 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<meta charset="utf-8">
 	<title><%= title %></title>
-	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/bower_components/bootstrapvalidator/dist/css/bootstrapvalidator.min.css">
-    <link rel="stylesheet" href="/bower_components/normalize/normalize.css">
-    <link rel="stylesheet" href="/css/story.css">
-    <link rel="stylesheet" href="/css/type.css">
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/bower_components/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/story.css">
+  <link rel="stylesheet" href="/css/type.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
 
 </head>
 <%-include header.html %>
@@ -64,8 +62,7 @@
 							<% newbook.map(function(story,i){
 								if(i % 3 == 0){%>
 									<div class="row">
-								<%}
-								%>
+								<%}%>
 								<div class="col-md-4 new-book-list">
 									<div class="book">
 										<img src="<%=story.image%>">
@@ -103,62 +100,18 @@
 						<a href="javascript:void(0)">免费</a>
 						<a href="javascript:void(0)">完本</a>
 					</div>
-					<div class="type-list-items">
-						<div class="type-list-item">
-							<a href="javascript:void(0)"><img src="<%=prime[0].image%>"></a>
-							<div class="type-list-item-right">
-								<div class="type-list-item-name"><a href="/story/summary/<%=prime[0]._id%>"><%=prime[0].storyname%></a></div>
-								<div class="type-list-item-author"><span>作者：</span><%=prime[0].author%></div>
-								<div class="type-list-item-latest"><span>更新至：</span>第一千六百三十二章</div>
-								<div class="type-list-item-summary"><span>简介：</span><%=prime[0].summary%></div>
+					<div class="bookmodel-items">
+						<% for(var i = 0;i <= 9;i++){%>
+              <div class="bookmodel-item">
+								<a href="javascript:void(0)"><img src="<%=strongrecommend[i].image%>"></a>
+								<div class="bookmodel-item-right">
+									<div class="bookmodel-item-name"><a href="/story/summary/<%=strongrecommend[i]._id%>"><%=strongrecommend[i].storyname%></a></div>
+									<div class="bookmodel-item-author"><span>作者：</span><%=strongrecommend[i].author%></div>
+									<div class="bookmodel-item-latest"><span>更新至：</span>第一千六百三十二章</div>
+									<div class="bookmodel-item-summary"><span>简介：</span><%=strongrecommend[i].summary%></div>
+								</div>
 							</div>
-						</div>
-						<div class="type-list-item">
-							<a href="javascript:void(0)"><img src="<%=prime[0].image%>"></a>
-							<div class="type-list-item-right">
-								<div class="type-list-item-name"><%=prime[0].storyname%></div>
-								<div class="type-list-item-author"><span>作者：</span><%=prime[0].author%></div>
-								<div class="type-list-item-latest"><span>更新至：</span>第一千六百三十二章</div>
-								<div class="type-list-item-summary"><span>简介：</span><%=prime[0].summary%></div>
-							</div>
-						</div>
-						<div class="type-list-item">
-							<a href="javascript:void(0)"><img src="<%=prime[0].image%>"></a>
-							<div class="type-list-item-right">
-								<div class="type-list-item-name"><%=prime[0].storyname%></div>
-								<div class="type-list-item-author"><span>作者：</span><%=prime[0].author%></div>
-								<div class="type-list-item-latest"><span>更新至：</span>第一千六百三十二章</div>
-								<div class="type-list-item-summary"><span>简介：</span><%=prime[0].summary%></div>
-							</div>
-						</div>
-						<div class="type-list-item">
-							<a href="javascript:void(0)"><img src="<%=prime[0].image%>"></a>
-							<div class="type-list-item-right">
-								<div class="type-list-item-name"><%=prime[0].storyname%></div>
-								<div class="type-list-item-author"><span>作者：</span><%=prime[0].author%></div>
-								<div class="type-list-item-latest"><span>更新至：</span>第一千六百三十二章</div>
-								<div class="type-list-item-summary"><span>简介：</span><%=prime[0].summary%></div>
-							</div>
-						</div>
-						<div class="type-list-item">
-							<a href="javascript:void(0)"><img src="<%=prime[0].image%>"></a>
-							<div class="type-list-item-right">
-								<div class="type-list-item-name"><%=prime[0].storyname%></div>
-								<div class="type-list-item-author"><span>作者：</span><%=prime[0].author%></div>
-								<div class="type-list-item-latest"><span>更新至：</span>第一千六百三十二章</div>
-								<div class="type-list-item-summary"><span>简介：</span><%=prime[0].summary%></div>
-							</div>
-						</div>
-						<div class="type-list-item">
-							<a href="javascript:void(0)"><img src="<%=prime[0].image%>"></a>
-							<div class="type-list-item-right">
-								<div class="type-list-item-name"><%=prime[0].storyname%></div>
-								<div class="type-list-item-author"><span>作者：</span><%=prime[0].author%></div>
-								<div class="type-list-item-latest"><span>更新至：</span>第一千六百三十二章</div>
-								<div class="type-list-item-summary"><span>简介：</span><%=prime[0].summary%></div>
-							</div>
-						</div>
-					</div>
+						<%}%>
 					<div class="type-list-more">
 						<a href="javascript:void(0)">查看更多</a>
 					</div>

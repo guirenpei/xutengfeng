@@ -10,7 +10,7 @@ exports.signup = function(req,res){
 	var password = _user.password;
 	var md5 = crypto.createHash('md5');
 	var md5password = md5.update(password).digest('hex');
-	User.findOne({username:username},function(err,user){
+	User.findOne({username: username},function(err,user){
 		if(err){
 			console.log(err)
 		}
@@ -27,8 +27,8 @@ exports.signup = function(req,res){
 				}
 				console.log(user);
 				user.password = null;
-		        delete user.password;
-		        req.session.user = user;
+		    delete user.password;
+		    req.session.user = user;
 				res.redirect('/');
 			})
 		}

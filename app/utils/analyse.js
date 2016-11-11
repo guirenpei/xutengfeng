@@ -14,6 +14,8 @@ exports.analyseCategory = function(html){
 		}
 		chapLists.push(story)
 	})
+	console.log('analyse');
+	console.log(chapLists[0]);
 	return chapLists
 }
 exports.analyseContent = function(html){

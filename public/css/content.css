@@ -43,7 +43,7 @@
 	transform: rotate(180deg);
 }
 .content-panel-body{
-	font-size: 40px;
+	font-size: 24px;
 	font-family: '楷体';
 	font-weight: 800;
 }
@@ -84,8 +84,11 @@
 	background-image: url('../img/story/next.svg');
 }*/
 @media screen and (max-width: 996px) and (min-width:480px){
+	.content-title.text-center.h1{
+    font-size: 24px;
+	}
 	.content-panel-body{
-		font-size: 24px;
+		font-size: 16px;
 	}
 	.quickly{
 		height: 30px;
@@ -98,8 +101,14 @@
 	}
 }
 @media screen and (max-width: 479px) and (min-width:320px){
+	.content-title.text-center.h1{
+    font-size: 18px;
+	}
+	.content-body{
+		padding: 20px 0 50px 0;
+	}
 	.content-panel-body{
-		font-size: 18px;
+		font-size: 12px;
 	}
 	.quickly{
 		height: 30px;

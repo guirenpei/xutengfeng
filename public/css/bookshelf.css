@@ -1,0 +1,109 @@
+.bookshelf{
+  width: 100%;
+}
+.book-reader{
+  width: 100%;
+  float: left;
+  height: 100px;
+  background-color: #980976;
+}
+.book-books{
+  width: 100%;
+  float: left;
+}
+.book-books > ul{
+  display: flex;
+  display: -webkit-flex;
+  width: 100%;
+  float: left;
+}
+.book-books > ul li{
+  flex: 1;
+  height: 40px;
+}
+.booktab{
+  width: 100%;
+  float: left;
+  display: flex;
+  display: -webkit-flex;
+  position: relative;
+  flex-direction: column;
+}
+.booktab .book-case{
+  background-color: #674383;
+}
+.booktab .book-lastread{
+  background-color: #564890;
+}
+.booktab .shelf-chapter-head{
+  width: 100%;
+  float: left;
+  display: flex;
+  display: -webkit-flex;
+  height: 50px;
+}
+.booktab .shelf-chapter-list{
+  display: flex;
+  display: -webkit-flex;
+  width: 100%;
+  float: left;
+  list-style: none;
+  padding: 0;
+  flex-direction: column;
+}
+.booktab .shelf-chapter-list li{
+  display: flex;
+  display: -webkit-flex;
+  width: 100%;
+}
+.booktab .shelf-chapter-kind,
+.booktab .shelf-chapter-chap,
+.booktab .shelf-chapter-author,
+.booktab .shelf-chapter-time
+{
+  font-size: 14px;
+  line-height: 40px;
+  text-align: center;
+}
+.booktab .shelf-chapter-kind{
+  flex: 1;
+}
+.booktab .shelf-chapter-chap{
+  flex: 6;
+  text-align: left;
+  text-indent: 2em;
+}
+.booktab .shelf-chapter-author{
+  flex: 2;
+}
+.booktab .shelf-chapter-time{
+  flex: 1.5;
+}
+.type-list-items{
+  display: none;
+}
+/*@media screen and (max-width: 996px) and (min-width: 680px){
+  .recommend .recommend-left{
+    display: none;
+  }
+  .recommend .recommend-right{
+    width: 540px;
+    margin: 0 70px;
+    float: left;
+  }
+  .prime .row figure{
+    height: 180px;
+  }
+}*/
+@media screen and (max-width: 679px) and (min-width: 320px){
+ .booktab  .shelf-chapter-head{
+    display: none;
+  }
+  .booktab .shelf-chapter-list{
+    display: none;  
+  }
+  .type-list-items{
+    display: block;
+  }
+}
+

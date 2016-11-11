@@ -11,7 +11,7 @@ const ChapterSchema = new Schema({
   chapters : [{
     chapter : String,
     chapterlink : String,
-  }]
+  }],
 	meta : {
 		createAt : {
 			type : Date,

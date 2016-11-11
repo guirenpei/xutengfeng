@@ -6,20 +6,19 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<meta charset="utf-8">
 	<title><%= title %></title>
-	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/bower_components/bootstrapvalidator/dist/css/bootstrapvalidator.min.css">
-    <link rel="stylesheet" href="/bower_components/normalize/normalize.css">
-    <link rel="stylesheet" href="/css/story.css">
-    <link rel="stylesheet" href="/css/summary.css">
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/bower_components/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/story.css">
+  <link rel="stylesheet" href="/css/summary.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
 
 </head>
 <%-include header.html %>
 	<div class="main">
 		<div class="con">
 			<div class="summary">
+				<div id="message" style="display: none;" data-user-id="<%=user.id%>" data-book-id="<%=book._id%>"></div>
 				<div class="summary-summary">
 					<div class="panel panel-warning">
 						  <div class="panel-heading">星门 > <%=book.categoryname%>> > <%=book.storyname%></div>
@@ -48,7 +47,7 @@
 						    		<div class="col-md-4 col-xs-4 book-btn-group">
 						    			<button type="button" class="btn btn-danger btn_continue">继续阅读</button></div>
 						    		<div class="col-md-4 col-xs-4 book-btn-group">
-						    			<button type="button" class="btn btn-success btn_collection" ><a href="/story/category/<%=book._id%>">收藏</a></button></div>
+						    			<button type="button" class="btn btn-success btn_collection" ><a href="javascript:void(0);" onclick="collect('<%=book._id%>')">收藏</a></button></div>
 						    		<div class="col-md-4 col-xs-4 book-btn-group">
 						    			<button type="button" class="btn btn-info btn_category"><a href="/story/category/<%=book._id%>">目录</a></button>
 						    		</div>
@@ -106,19 +105,19 @@
 							<div class="book-text-number">字数：<span>467567</span></div>
 							<div class="book-visted">已有<span><%=book.allclick%>人次</span> 读过此书</div>
 						</div>
-						<div class="collection">&nbsp;+&nbsp;书架</div>
+						<div class="collection" onclick="collect('<%=book._id%>')">&nbsp;+&nbsp;书架</div>
 					</div>
 					<div class="summary-web-book-btn">
-						<a href="/story/category/<%=book._id%>" class="summary-web-book-btn-read">
+						<a href="/story/content/<%=chapters[0].chapterlink%>?_id=<%=book._id%>" class="summary-web-book-btn-read">
 							立即阅读
 						</a>
-						<a class="summary-web-book-btn-category">
+						<a class="summary-web-book-btn-category" href="/story/category/<%=book._id%>">
 							查看目录
 						</a>
 					</div>
 					<div class="summary-web-book-last">
 						<span>最新</span>
-						第一千二百二十六章
+						<a href="/story/content/<%=chapters[chapters.length - 1].chapterlink%>?_id=<%=book._id%>"><%=chapters[chapters.length - 1].chapter%></a>
 						<span>一小时前</span>
 					</div>
 				</div>
@@ -163,20 +162,37 @@
 				<div class="summary-web-category">
 					<div class="summary-web-summary-head">
 						<div class="summary-web-summary-head-left"></div>
-						<div class="summary-web-summary-head-right">作品目录<span>(共369章)</span><a href="javascript:void(0)">反序</a></div>
+						<div class="summary-web-summary-head-right">作品目录<span>(共<%=chapters.length%>章)</span><a href="javascript:void(0)">反序</a></div>
 					</div>
 					<div class="summary-web-category-list">
-						<div class="summary-web-category-list-item">第一章：行政组<span>></span></div>
-						<div class="summary-web-category-list-item">第一章：行政组<span>></span></div>
-						<div class="summary-web-category-list-item">第一章：行政组<span>></span></div>
-						<div class="summary-web-category-list-item">第一章：行政组<span>></span></div>
-						<div class="summary-web-category-list-item">第一章：行政组<span>></span></div>
+					<% for(var i = 0;i <= 9;i++){%>
+						<div class="summary-web-category-list-item"><span><%=chapters[i].chapter%></span></div>
+					<%}%>
 					</div>
 					<div class="summary-web-category-more">
-						<a href="javascript:void(0)">进入作品目录 查看更多</a>
+						<a href="/story/category/<%=book._id%>">进入作品目录 查看更多</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+    'use strict';
+    function collect (_id) {
+      $.ajax({
+        url: '/story/collect/' + _id,
+        type: 'POST',
+        success: function (data) {
+        	console.log(data);
+        	if (data.success === 1) {
+            alert('收藏成功！');
+        	} else if (data.success === 0) {
+            alert('已收藏过本书！');
+        	} else if (data.success === 2) {
+            alert('已收藏书签！');
+        	}
+        }
+	     });
+	  }
+	</script>
 <%-include footer.html %>

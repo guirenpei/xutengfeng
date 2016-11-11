@@ -266,6 +266,15 @@
 }
 .show-book-right-summary a{
 	color: #000;
+	/**
+		多行文本换行
+	*/
+	display: -webkit-box !important;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
 }
 .show-book-list{
 	width: 100%;
@@ -319,7 +328,10 @@
 	}
 }
 @media screen and (max-width: 679px) and (min-width: 480px){
-	.best-story .best-story-left .best-story-left-thumb{
+	.best-story{
+		display: none;
+	}
+	/*.best-story .best-story-left .best-story-left-thumb{
 		height: 180px;
 	}
 	.best-story-right .row{
@@ -345,7 +357,7 @@
 		color: #b01f2e;
 		font-weight: 700;
 		font-size: 14px;
-	}
+	}*/
 	.category-hot-head ul{
 		width: 75%;
 		float: left;
@@ -372,7 +384,10 @@
 	}
 }
 @media screen and (max-width: 479px) and (min-width: 320px){
-	.best-story .best-story-left{
+	.best-story{
+		display: none;
+	}
+	/*.best-story .best-story-left{
 		width: 100%;
 	}
 	.best-story .best-story-left .best-story-left-thumb{
@@ -421,7 +436,7 @@
 		color: #b01f2e;
 		font-weight: 700;
 		font-size: 14px;
-	}
+	}*/
 	.category-hot{
 		display: none;
 	}

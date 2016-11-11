@@ -160,30 +160,3 @@ function getPageAsync(url){
 		})
 	})
 }
-
-// let fetchIpArray = []
-// storyPages.forEach(function(id){
-// 	fetchIpArray.push(getPageAsync(baseUrl + id + '.html'))
-// })
-
-// Promise
-// 	.all(fetchIpArray)
-// 	.then(function(pages){
-// 		let storiesData = []
-// 		console.log("=====>")
-// 		console.log(pages[0])
-// 		pages.forEach(function(html){
-// 			let stories = filterStories(html)
-// 			stories.forEach(function(story){
-// 				let _storyDetail = new StoryDetail(story)
-// 				_storyDetail.save(function(err,story){
-// 					if(err){
-// 						console.log(err);
-// 					}
-// 					k++
-// 					console.log('story_save'+k);
-// 				})
-// 			})
-// 		})
-// 		ipInsert(storiesData)
-// 	})

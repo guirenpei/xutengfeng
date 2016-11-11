@@ -1,4 +1,5 @@
 'use strict';
+/* eslint no-console: 0 */
 
 const StoryDetail = require('../models/storyDetail');
 const chapter = require('../models/chapter');
@@ -79,18 +80,3 @@ function *crawlerChap(story){
   }
   console.log('成功保存数据===');
 }
-// function analyseCategory (html) {
-//   let $ = cheerio.load(html);
-//   let lists = $('#list dl dd');
-//   let chapLists = [];
-//   lists.map((i, el) => {
-//     let chapterlink = $(this).find('a').attr('href').trim();
-//     let chapter = $(this).text().trim();
-//     let story = {
-//       chapterlink : chapterlink,
-//       chapter : chapter,
-//     };
-//     chapLists.push(story);
-//   })
-//   return chapLists;
-// }

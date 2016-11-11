@@ -131,11 +131,79 @@ h5{
 	display: inline-block;
 }
 #top-list .search{
-	width: 160px;
+	width: 100%;
 	float: left;
 	position: fixed;
 	top: 8px;
 	right: 10px;
+}
+.search .form-group{
+	display: flex;
+	display: -webkit-flex
+	width: 100%;
+	padding: 0 20px;
+}
+.search .form-group input{
+  flex: 1;
+}
+.search .form-group button{
+	width: 100px;
+	text-align: center;
+}
+
+/**
+	bookmodel定义
+*/
+.bookmodel-items{
+	width: 100%;
+	flex: 1;
+	float: left;
+	display: -webkit-flex;
+	flex-direction: column;
+}
+.bookmodel-item{
+	flex: 1;
+	display: -webkit-flex;
+	margin: 2px 5px;
+}
+.bookmodel-item a{
+	width: 74px;
+	height: 98px;
+	display: block;
+}
+.bookmodel-item a img{
+	width: 100%;
+	height: 100%;
+}
+.bookmodel-item-right{
+	flex: 1;
+	padding-left: 5px;
+	display: -webkit-flex;
+	flex-direction: column;
+}
+.bookmodel-item-name,
+.bookmodel-item-author,
+.bookmodel-item-latest,
+.bookmodel-item-summary{
+	flex: 1;
+	font-size: 12px;
+	color: #000;
+	line-height: 24.5px;
+}
+.bookmodel-item-name a{
+	display: inline;
+	color: #000;
+}
+.bookmodel-item-right span{
+	color: #787878;
+}
+.bookmodel-item-summary{
+	display: -webkit-box !important;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
 }
 @media screen and (max-width: 767px){
 	#top-list .search{
@@ -171,7 +239,7 @@ h5{
 }
 @media screen and (max-width: 679px) and (min-width: 480px){
 	.con{
-		width: 480px;
+		width: 100%;
 	}
 	.side{
 		display: none;
@@ -197,7 +265,7 @@ h5{
 }
 @media screen and (max-width: 479px) and (min-width: 320px){
 	.con{
-		width: 320px;
+		width: 100%;
 	}
 	.side{
 		display: none;
@@ -233,13 +301,13 @@ h5{
 }
 .side ul{
 	list-style: none;
-	padding: 15px;
+	padding: 15px 5px;
 	margin: 0;
 	width: 100%;
 }
 .side ul li{
 	padding-bottom: 5px;
-	font-size: 12px;
+	font-size: 10px;
 	border-bottom: 1px #ccc dashed;
 }
 .side ul li a{

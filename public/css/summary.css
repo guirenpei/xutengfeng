@@ -36,7 +36,7 @@
 	width: 60%;
 	height: 250px;
 	float: left;
-	margin-left: 5%;
+	margin-left: 2%;
 }
 .summary-right .row{
 	margin: 0;
@@ -465,7 +465,6 @@ kbd:hover{
 	}
 	.summary-web-category-list-item span{
 		color: rgba(169,169,169,1);
-		float: right;
 		font-size: 16px;
 	}
 	.summary-web-category-list-item:last-child{

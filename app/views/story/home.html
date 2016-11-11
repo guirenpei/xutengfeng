@@ -7,11 +7,11 @@
 	<meta charset="utf-8">
 	<title><%= title %></title>
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/story.css">
-    <link rel="stylesheet" href="/css/home.css">
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/story.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>  
 </head>
 <body>
 <%-include header.html %>
@@ -97,244 +97,88 @@
 						<div class="more"><a href="#">查看更多</a></div>
 					</div>
 					<div class="pinshu">
-						<div class="row">
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a></h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
+							<%pinshu.map(function(story,i){
+								if(i % 3 == 0){%>
+									<div class="row">
+								<%}%>
+								<div class="col-md-4 col-xs-4 category-hot-col">
+	                <div class="book">
+										<img src="<%=story.image%>">
+										<div class="book-right">
+											<h2 class="text-center"><a href="/story/summary/<%=story._id%>"><%=story.storyname%></a></h2>
+											<p><%=story.summary%></p>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a></h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
-									</div>
+								<%
+								var k = i+1
+								if(k % 3 == 0){%>
 								</div>
-							</div>
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a></h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a></h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a></h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a></h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
-									</div>
-								</div>
-							</div>
-						</div>
+								<%}
+							})%>
 					</div>
 					<div class="tuijian" style="display: none;">
-						<div class="row">
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a>222</h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
+								<%tuijian.map(function(story){
+	                if(i % 3 == 0){%>
+									<div class="row">
+								<%}%>
+								<div class="col-md-4 col-xs-4 category-hot-col">
+	                <div class="book">
+										<img src="<%=story.image%>">
+										<div class="book-right">
+											<h2 class="text-center"><a href="/story/summary/<%=story._id%>"><%=story.storyname%></a></h2>
+											<p><%=story.summary%></p>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a>222</h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
-									</div>
+								<%
+								var k = i+1
+								if(k % 3 == 0){%>
 								</div>
-							</div>
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a>222</h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a>222</h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a>222</h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a>222</h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
-									</div>
-								</div>
-							</div>
-						</div>
+								<%}
+								})%>
 					</div>
 					<div class="jingpin" style="display: none;">
-						<div class="row">
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a>3333</h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
+								<%jingpin.map(function(story){
+	                if(i % 3 == 0){%>
+									<div class="row">
+								<%}%>
+								<div class="col-md-4 col-xs-4 category-hot-col">
+	                <div class="book">
+										<img src="<%=story.image%>">
+										<div class="book-right">
+											<h2 class="text-center"><a href="/story/summary/<%=story._id%>"><%=story.storyname%></a></h2>
+											<p><%=story.summary%></p>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a>3333</h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
-									</div>
+								<%
+								var k = i+1
+								if(k % 3 == 0){%>
 								</div>
-							</div>
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a>3333</h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a>3333</h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a>3333</h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a>3333</h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
-									</div>
-								</div>
-							</div>
-						</div>
+								<%}
+								})%>
 					</div>
 					<div class="quanpin" style="display: none;">
-						<div class="row">
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a>4444</h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
+								<%quanpin.map(function(story){
+	                if(i % 3 == 0){%>
+									<div class="row">
+									<%}%>
+									<div class="col-md-4 col-xs-4 category-hot-col">
+		                <div class="book">
+											<img src="<%=story.image%>">
+											<div class="book-right">
+												<h2 class="text-center"><a href="/story/summary/<%=story._id%>"><%=story.storyname%></a></h2>
+												<p><%=story.summary%></p>
+											</div>
+										</div>
 									</div>
-								</div>
-							</div>
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a>4444</h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
+									<%
+									var k = i+1
+									if(k % 3 == 0){%>
 									</div>
-								</div>
-							</div>
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a>4444</h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a>4444</h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a>4444</h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 col-xs-4 category-hot-col">
-								<div class="book">
-									<img src="/img/story/0000.jpg">
-									<div class="book-right">
-										<h2 class="text-center"><a href="#">书剑江山</a>4444</h2>
-										<p>天下裂变，王室偏安一隅，诸侯纷争，世子苏岳霖入江湖，掌天下。天下裂变，王室偏安一隅，诸侯纷争.</p>
-									</div>
-								</div>
-							</div>
-						</div>
+									<%}
+								})%>
 					</div>
 				</div>
 				<div class="prime-home">
@@ -351,66 +195,58 @@
 									<h2>奇幻玄幻</h2>
 								</div>
 								<div class="show-book">
-									<img src="/img/story/0000.jpg">
+									<img src="<%=primexuanhuan[0].image%>">
 									<div class="show-book-right">
-										<h4 class="show-book-right-bookname"><a href="#">天域剑主</a></h4>
-										<p class="show-book-right-author">作者：<a href="#">徽州才子</a></p>
-										<p class="show-book-right-summary"><a href="#">天地为炉大道为火，淬炼肉身成就天域剑主</a></p>
-									</div>
-									
-								</div>
-								<ul class="show-book-list">
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-									</ul>
-							</div>
-							<div class="show-book-border">
-								<a class="more" href="#">查看更多>></a>
-								<div class="side-pic"></div>
-								<div class="show-sub-title">
-									<h2>奇幻玄幻</h2>
-								</div>
-								<div class="show-book">
-									<img src="/img/story/0000.jpg">
-									<div class="show-book-right">
-										<h4 class="show-book-right-bookname"><a href="#">天域剑主</a></h4>
-										<p class="show-book-right-author">作者：<a href="#">徽州才子</a></p>
-										<p class="show-book-right-summary"><a href="#">天地为炉大道为火，淬炼肉身成就天域剑主</a></p>
+										<h4 class="show-book-right-bookname"><a href="/story/summary/<%=primexuanhuan[0]._id%>"><%=primexuanhuan[0].storyname%></a></h4>
+										<p class="show-book-right-author">作者：<a href="#"><%=primexuanhuan[0].author%></a></p>
+										<p class="show-book-right-summary"><a href="/story/summary/<%=primexuanhuan[0]._id%>"><%=primexuanhuan[0].summary%></a></p>
 									</div>
 								</div>
 								<ul class="show-book-list">
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
+								  <%for(var i = 1;i< primexuanhuan.length;i++){%>
+										<li><a href="/story/summary/<%=primexuanhuan[i]._id%>" title="承天：<%=primexuanhuan[i].storyname%>"><span>[新书]</span><%=primexuanhuan[i].storyname%></a></li>
+									<%}%>
 								</ul>
 							</div>
 							<div class="show-book-border">
 								<a class="more" href="#">查看更多>></a>
 								<div class="side-pic"></div>
 								<div class="show-sub-title">
-									<h2>奇幻玄幻</h2>	
+									<h2>修真小说</h2>
 								</div>
 								<div class="show-book">
-									<img src="/img/story/0000.jpg">
+									<img src="<%=primexiuzhen[0].image%>">
 									<div class="show-book-right">
-										<h4 class="show-book-right-bookname"><a href="#">天域剑主</a></h4>
-										<p class="show-book-right-author">作者：<a href="#">徽州才子</a></p>
-										<p class="show-book-right-summary"><a href="#">天地为炉大道为火，淬炼肉身成就天域剑主</a></p>
+										<h4 class="show-book-right-bookname"><a href="/story/summary/<%=primexiuzhen[0]._id%>"><%=primexiuzhen[0].storyname%></a></h4>
+										<p class="show-book-right-author">作者：<a href="#"><%=primexiuzhen[0].author%></a></p>
+										<p class="show-book-right-summary"><a href="/story/summary/<%=primexiuzhen[0]._id%>"><%=primexiuzhen[0].summary%></a></p>
 									</div>
-									
 								</div>
 								<ul class="show-book-list">
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-									</ul>
+								  <%for(var i = 1;i< primexiuzhen.length;i++){%>
+										<li><a href="/story/summary/<%=primexiuzhen[i]._id%>" title="承天：<%=primexiuzhen[i].storyname%>"><span>[新书]</span><%=primexiuzhen[i].storyname%></a></li>
+									<%}%>
+								</ul>
+							</div>
+							<div class="show-book-border">
+								<a class="more" href="#">查看更多>></a>
+								<div class="side-pic"></div>
+								<div class="show-sub-title">
+									<h2>都市小说</h2>	
+								</div>
+								<div class="show-book">
+									<img src="<%=primedushi[0].image%>">
+									<div class="show-book-right">
+										<h4 class="show-book-right-bookname"><a href="/story/summary/<%=primedushi[0]._id%>"><%=primedushi[0].storyname%></a></h4>
+										<p class="show-book-right-author">作者：<a href="#"><%=primedushi[0].author%></a></p>
+										<p class="show-book-right-summary"><a href="/story/summary/<%=primedushi[0]._id%>"><%=primedushi[0].summary%></a></p>
+									</div>
+								</div>
+								<ul class="show-book-list">
+								  <%for(var i = 1;i< primedushi.length;i++){%>
+										<li><a href="/story/summary/<%=primedushi[i]._id%>" title="承天：<%=primedushi[i].storyname%>"><span>[新书]</span><%=primedushi[i].storyname%></a></li>
+									<%}%>
+								</ul>
 							</div>
 						</div>
 						<div class="row">
@@ -418,69 +254,61 @@
 								<a class="more" href="#">查看更多>></a>
 								<div class="side-pic"></div>
 								<div class="show-sub-title">
-									<h2>奇幻玄幻</h2>
+									<h2>穿越小说</h2>
 								</div>
 								<div class="show-book">
-									<img src="/img/story/0000.jpg">
+									<img src="<%=primechuanyue[0].image%>">
 									<div class="show-book-right">
-										<h4 class="show-book-right-bookname"><a href="#">天域剑主</a></h4>
-										<p class="show-book-right-author">作者：<a href="#">徽州才子</a></p>
-										<p class="show-book-right-summary"><a href="#">天地为炉大道为火，淬炼肉身成就天域剑主</a></p>
+										<h4 class="show-book-right-bookname"><a href="/story/summary/<%=primechuanyue[0]._id%>"><%=primechuanyue[0].storyname%></a></h4>
+										<p class="show-book-right-author">作者：<a href="#"><%=primechuanyue[0].author%></a></p>
+										<p class="show-book-right-summary"><a href="/story/summary/<%=primechuanyue[0]._id%>"><%=primechuanyue[0].summary%></a></p>
 									</div>
-									
 								</div>
 								<ul class="show-book-list">
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-									</ul>
+								  <%for(var i = 1;i< primechuanyue.length;i++){%>
+										<li><a href="/story/summary/<%=primechuanyue[i]._id%>" title="承天：<%=primechuanyue[i].storyname%>"><span>[新书]</span><%=primechuanyue[i].storyname%></a></li>
+									<%}%>
+								</ul>
 							</div>
 							<div class="show-book-border">
 								<a class="more" href="#">查看更多>></a>
 								<div class="side-pic"></div>
 								<div class="show-sub-title">
-									<h2>奇幻玄幻</h2>
+									<h2>网游小说</h2>
 								</div>
 								<div class="show-book">
-									<img src="/img/story/0000.jpg">
+									<img src="<%=primewangyou[0].image%>">
 									<div class="show-book-right">
-										<h4 class="show-book-right-bookname"><a href="#">天域剑主</a></h4>
-										<p class="show-book-right-author">作者：<a href="#">徽州才子</a></p>
-										<p class="show-book-right-summary"><a href="#">天地为炉大道为火，淬炼肉身成就天域剑主</a></p>
+										<h4 class="show-book-right-bookname"><a href="/story/summary/<%=primewangyou[0]._id%>"><%=primewangyou[0].storyname%></a></h4>
+										<p class="show-book-right-author">作者：<a href="#"><%=primewangyou[0].author%></a></p>
+										<p class="show-book-right-summary"><a href="/story/summary/<%=primewangyou[0]._id%>"><%=primewangyou[0].summary%></a></p>
 									</div>
-									
 								</div>
 								<ul class="show-book-list">
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-									</ul>
+								  <%for(var i = 1;i< primewangyou.length;i++){%>
+										<li><a href="/story/summary/<%=primewangyou[i]._id%>" title="承天：<%=primewangyou[i].storyname%>"><span>[新书]</span><%=primewangyou[i].storyname%></a></li>
+									<%}%>
+								</ul>
 							</div>
 							<div class="show-book-border">
 								<a class="more" href="#">查看更多>></a>
 								<div class="side-pic"></div>
 								<div class="show-sub-title">
-									<h2>奇幻玄幻</h2>
+									<h2>科幻小说</h2>
 								</div>
 								<div class="show-book">
-									<img src="/img/story/0000.jpg">
+									<img src="<%=primekehuan[0].image%>">
 									<div class="show-book-right">
-										<h4 class="show-book-right-bookname"><a href="#">天域剑主</a></h4>
-										<p class="show-book-right-author">作者：<a href="#">徽州才子</a></p>
-										<p class="show-book-right-summary"><a href="#">天地为炉大道为火，淬炼肉身成就天域剑主</a></p>
+										<h4 class="show-book-right-bookname"><a href="/story/summary/<%=primekehuan[0]._id%>"><%=primekehuan[0].storyname%></a></h4>
+										<p class="show-book-right-author">作者：<a href="#"><%=primekehuan[0].author%></a></p>
+										<p class="show-book-right-summary"><a href="/story/summary/<%=primekehuan[0]._id%>"><%=primekehuan[0].summary%></a></p>
 									</div>
 								</div>
 								<ul class="show-book-list">
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-										<li><a href="#" title="承天：有把折扇绝世无双"><span>[新书]</span>承天：有把折扇绝世无双</a></li>
-									</ul>
+								  <%for(var i = 1;i< primekehuan.length;i++){%>
+										<li><a href="/story/summary/<%=primekehuan[i]._id%>" title="承天：<%=primekehuan[i].storyname%>"><span>[新书]</span><%=primekehuan[i].storyname%></a></li>
+									<%}%>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -498,30 +326,14 @@
 								<span class="latest-chapter-time">更新时间</span>
 							</div>
 							<ul class="latest-chapter-list">
-								<li>
-									<span class="latest-chapter-kind"><a href="#">[都市]</a></span>
-									<span class="latest-chapter-chap"><a href="#">白夜神话</a><a href="#">正文 第十六章 秦明的监护人</a></span>
-									<span class="latest-chapter-author"><a href="#">作者</a></span>
-									<span class="latest-chapter-time">12:18</span>
-								</li>
-								<li>
-									<span class="latest-chapter-kind"><a href="#">[都市]</a></span>
-									<span class="latest-chapter-chap"><a href="#">白夜神话</a><a href="#">正文 第十六章 秦明的监护人</a></span>
-									<span class="latest-chapter-author"><a href="#">作者</a></span>
-									<span class="latest-chapter-time">12:18</span>
-								</li>
-								<li>
-									<span class="latest-chapter-kind"><a href="#">[都市]</a></span>
-									<span class="latest-chapter-chap"><a href="#">白夜神话</a><a href="#">正文 第十六章 秦明的监护人</a></span>
-									<span class="latest-chapter-author"><a href="#">作者</a></span>
-									<span class="latest-chapter-time">12:18</span>
-								</li>
-								<li>
-									<span class="latest-chapter-kind"><a href="#">[都市]</a></span>
-									<span class="latest-chapter-chap"><a href="#">白夜神话</a><a href="#">正文 第十六章 秦明的监护人</a></span>
-									<span class="latest-chapter-author"><a href="#">作者</a></span>
-									<span class="latest-chapter-time">12:18</span>
-								</li>
+								<%latestbook.map(function(story){%>
+	                <li>
+										<span class="latest-chapter-kind"><%=(story.categoryname).substr(0,2)%></span>
+										<span class="latest-chapter-chap"><%=story.storyname%></span>
+										<span class="latest-chapter-author"><%=story.author%></span>
+										<span class="latest-chapter-time"><%=moment(story.meta.updateAt).format('hh : mm')%></span>
+									</li>
+								<%})%>
 							</ul>
 						</div>
 					</div>

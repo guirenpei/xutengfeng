@@ -6,30 +6,30 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<meta charset="utf-8">
 	<title><%= title %></title>
-	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/bower_components/bootstrapvalidator/dist/css/bootstrapvalidator.min.css">
-    <link rel="stylesheet" href="/bower_components/normalize/normalize.css">
-    <link rel="stylesheet" href="/css/story.css">
-    <link rel="stylesheet" href="/css/type.css">
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/bower_components/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/story.css">
+  <link rel="stylesheet" href="/css/type.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>  
 
 </head>
 <%-include header.html %>
 <div class="main">
 	<div class="con">
 		<div class="search">
-			<div class="type-list-items">
-				<div class="type-list-item">
-					<a href="javascript:void(0)"><img src="<%=books[0].image%>"></a>
-					<div class="type-list-item-right">
-						<div class="type-list-item-name"><a href="/story/summary/"><%=books[0].storyname%></a></div>
-						<div class="type-list-item-author"><span>作者：</span><%=books[0].author%></div>
-						<div class="type-list-item-latest"><span>更新至：</span>第一千六百三十二章</div>
-						<div class="type-list-item-summary"><span>简介：</span><%=books[0].summary%></div>
-					</div>
-				</div>
+			<div class="bookmodel-items">
+				<%results.map(function(book){%>
+          <div class="bookmodel-item">
+            <a href="/story/summary/<%=book._id%>"><img src="<%=book.image%>"></a>
+            <div class="bookmodel-item-right">
+              <div class="bookmodel-item-name"><a href="/story/summary/<%=book.storyname%>"><%=book.storyname%></a></div>
+              <div class="bookmodel-item-author"><span>作者：</span><%=book.author%></div>
+              <div class="bookmodel-item-latest"><span>更新至：</span>第一千六百三十二章</div>
+              <div class="bookmodel-item-summary"><span>简介：</span><%=book.summary%></div>
+            </div>
+          </div>
+        <%})%>
 			</div>
 		</div>
 	</div>

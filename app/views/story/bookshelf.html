@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta charset="utf-8">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/story.css">
+  <link rel="stylesheet" href="/css/type.css">
+  <link rel="stylesheet" href="/css/bookshelf.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script> 
+  <script type="text/javascript" src="/js/home.js"></script>
+
+</head>
+<%-include header.html %>
+  <div class="main">
+    <div class="con">
+      <div class="bookshelf">
+        <div class="book-reader">
+          
+        </div>
+        <div class="book-books">
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#bookcase">我的书架</a></li>
+            <li role="presentation"><a href="#lastread">最近阅读</a></li>
+          </ul>
+          <div class="booktab bookcase">
+              <div class="shelf-chapter-head">
+                <span class="shelf-chapter-kind">类别</span>
+                <span class="shelf-chapter-chap">书名/章节</span>
+                <span class="shelf-chapter-author">作者</span>
+                <span class="shelf-chapter-time">更新时间</span>
+              </div>
+              <ul class="shelf-chapter-list">
+                <% for(var i = 0;i < shelf.length;i++){%>
+                  <li>
+                    <span class="shelf-chapter-kind"><%=(shelf[i].story.categoryname).substr(0,2)%></span>
+                    <span class="shelf-chapter-chap"><%=shelf[i].tagchapter%></span>
+                    <span class="shelf-chapter-author"><%=shelf[i].story.author%></span>
+                    <span class="shelf-chapter-time"><%=moment(shelf[i].story.meta.updateAt).format('hh : mm')%></span>
+                  </li>
+                <%}%>
+              </ul>
+              <div class="bookmodel-items">
+                <% for(var i = 0;i < shelf.length;i++){%>
+                  <div class="bookmodel-item">
+                    <a href="javascript:void(0)"><img src="<%=shelf[i].story.image%>"></a>
+                    <div class="bookmodel-item-right">
+                      <div class="bookmodel-item-name"><a href="/story/summary/<%=shelf[i].story._id%>"><%=shelf[i].story.storyname%></a></div>
+                      <div class="bookmodel-item-author"><span>作者：</span><%=shelf[i].story.author%></div>
+                      <div class="bookmodel-item-latest"><span>更新至：</span><%=shelf[i].tagchapter%></div>
+                      <div class="bookmodel-item-summary"><span>已读到：</span><%=shelf[i].tagchapter%></div>
+                    </div>
+                  </div>
+                <%}%>
+              </div>
+          </div>
+          <div class="booktab lastread" style="display: none;">
+              <div class="shelf-chapter-head">
+                <span class="shelf-chapter-kind">类别</span>
+                <span class="shelf-chapter-chap">书名/章节</span>
+                <span class="shelf-chapter-author">作者</span>
+                <span class="shelf-chapter-time">更新时间</span>
+              </div>
+              <ul class="shelf-chapter-list">
+                <% for(var i = 0;i < shelflast.length;i++){%>
+                  <li>
+                    <span class="shelf-chapter-kind"><%=(shelflast[i].story.categoryname).substr(0,2)%></span>
+                    <span class="shelf-chapter-chap"><%=shelflast[i].tagchapter%></span>
+                    <span class="shelf-chapter-author"><%=shelflast[i].story.author%></span>
+                    <span class="shelf-chapter-time"><%=moment(shelflast[i].story.meta.updateAt).format('hh : mm')%></span>
+                  </li>
+                <%}%>
+              </ul>
+              <div class="bookmodel-items">
+                <% for(var i = 0;i < shelf.length;i++){%>
+                  <div class="bookmodel-item">
+                    <a href="javascript:void(0)"><img src="<%=shelflast[i].story.image%>"></a>
+                    <div class="bookmodel-item-right">
+                      <div class="bookmodel-item-name"><a href="/story/summary/<%=shelflast[i].story._id%>"><%=shelflast[i].story.storyname%></a></div>
+                      <div class="bookmodel-item-author"><span>作者：</span><%=shelflast[i].story.author%></div>
+                      <div class="bookmodel-item-latest"><span>更新至：</span><%=shelflast[i].tagchapter%></div>
+                      <div class="bookmodel-item-summary"><span>已读到：</span><%=shelflast[i].tagchapter%></div>
+                    </div>
+                  </div>
+                <%}%>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<%-include footer.html %>

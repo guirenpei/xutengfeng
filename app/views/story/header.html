@@ -14,7 +14,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="top-list">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">书架</a></li>
+        <li class="active"><a href="/story/bookshelf">书架</a></li>
         <li><a href="/story/type/0">玄幻</a></li>
         <li><a href="/story/type/1">修真</a></li>
         <li><a href="/story/type/2">都市</a></li>
@@ -26,9 +26,9 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div class="form-group search">
-          <div class="input-group">
-              <div class="input-group-addon">@</div>
-              <input class="form-control" type="text" placeholder="书名/作者">
-          </div>
-      </div>
+<form action="/story/search" class="search">
+  <div class="form-group form-inline ">
+    <input name="keyword" class="form-control" type="text" placeholder="书名/作者">
+    <button type="submit" class="btn btn-default">搜索</button>
+  </div>
+</form>
