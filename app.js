@@ -12,7 +12,7 @@ mongoose.Promise = require('bluebird');
 const logger = require('morgan');
 // 定义路由
 // const routes = require('./config/routes');
-mongoose.connect('mongodb://115.28.73.185:27017/page');
+mongoose.connect('mongodb://localhost:27017/page');
 mongoose.connection.on("error", (error) => {
   console.log('数据库连接失败：' + error);
 });
