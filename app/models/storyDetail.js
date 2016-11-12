@@ -20,7 +20,7 @@ const storyDetailSchema = new Schema({
 	chapter : {
 		type : ObjectId,
 		ref : 'Chapter',
-	}
+	},
 	meta : {
 		createAt : {
 			type : Date,
