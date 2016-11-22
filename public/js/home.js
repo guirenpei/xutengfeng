@@ -33,6 +33,6 @@ $(function(){
 			$('.'+$(active).find('a').attr('href').split('#')[1]).css('opacity', 1);
 			$('.'+$(active).find('a').attr('href').split('#')[1]).css('margin-left','-100px');
 			$('.'+$(active).find('a').attr('href').split('#')[1])[0].style.display = 'none';
-		}
+    }
   });
 });

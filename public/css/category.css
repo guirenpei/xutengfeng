@@ -72,8 +72,18 @@
 	.category-list-bottom{
 		width: 100%;
 		float: left;
+		height: 40px;
 		padding: 10px;
 		display: -webkit-flex;
+	}
+	.category-list-bottom #pagination{
+    width: 100%;
+    height: 40px;
+    margin: 0;
+	}
+	.categiry-list-bottom #paginnation li{
+    height: 40px;
+    line-height: 40px;
 	}
 	.category-list-content{
 		width: 100%;
@@ -102,8 +112,7 @@
 		height: 40px;
 		flex: 1;
 	}
-	.category-list-top a,
-	.category-list-bottom a{
+	.category-list-top a{
 		display: inline;
 		height: 34px;
 		line-height: 34px;

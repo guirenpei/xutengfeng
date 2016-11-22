@@ -3,7 +3,7 @@
 const multipart = require('connect-multiparty');
 const multipartMiddleware = multipart();
 // routes
-// var Index = require('../app/controllers/index')
+const Index = require('../app/controllers/index');
 // var User = require('../app/controllers/user')
 // var Movie = require('../app/controllers/movie')
 // var Comment = require('../app/controllers/comment')
@@ -18,7 +18,7 @@ module.exports = function(app) {
     next();
   });
 	// Blog
-	// app.get('/',Index.blog)
+  app.get('/mmBlog', Index.blog);
 
 	// Index 页面
   app.get('/', Story.index); // 个人网站分类页面
@@ -34,4 +34,11 @@ module.exports = function(app) {
   app.post('/story/collect/:_id', Auth.noLogin, Story.collect);
   app.get('/story/bookshelf', Auth.noLogin, Story.bookshelf);
   // app.post('/story/update',Story.update) // 更新全部小说，需要一个按钮
+
+  // react data
+  // react home data
+  app.post('/react/story', Story.reactData); // 用react获取 小说网站首页数据
+
+
+
 };

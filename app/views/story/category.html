@@ -56,7 +56,7 @@
 			</div>
 			<div class="category-list">
 					<div class="category-list-top">
-						<div class="category-list-select">
+						<!-- <div class="category-list-select">
 							<select class="form-control">
 								<option name="1" value="1" selected="selected">1</option>
 								<option name="2" value="2" >2</option>
@@ -64,29 +64,56 @@
 								<option name="4" value="4" >4</option>
 								<option name="5" value="5" >5</option>
 							</select>
-						</div>
+						</div> -->
 						<a href="javascript:void(0)">↓&nbsp;反序</a>
 					</div>
 					<div class="category-list-content">
 						<div class="category-list-content-item"><a href="/story/content/<%=chapters[0].chapterlink%>?_id=<%=book._id%>"><%=chapters[0].chapter%></a><span>></span></div>
-						<div class="category-list-content-item"><a href="/story/content/<%=chapters[0].chapterlink%>?_id=<%=book._id%>"><%=chapters[0].chapter%></a><span>></span></div>
-						<div class="category-list-content-item"><a href="/story/content/<%=chapters[0].chapterlink%>?_id=<%=book._id%>"><%=chapters[0].chapter%></a><span>></span></div>
-						<div class="category-list-content-item"><a href="/story/content/<%=chapters[0].chapterlink%>?_id=<%=book._id%>"><%=chapters[0].chapter%></a><span>></span></div>
+						<div class="category-list-content-item"><a href="/story/content/<%=chapters[0].chapterlink%>?_id=<%=book._id%>"><%=chapters[1].chapter%></a><span>></span></div>
+						<div class="category-list-content-item"><a href="/story/content/<%=chapters[0].chapterlink%>?_id=<%=book._id%>"><%=chapters[2].chapter%></a><span>></span></div>
+						<div class="category-list-content-item"><a href="/story/content/<%=chapters[0].chapterlink%>?_id=<%=book._id%>"><%=chapters[3].chapter%></a><span>></span></div>
 					</div>
 					<div class="category-list-bottom">
-						<a href="javascript:void(0)"><<上一页</a>
-						<div class="category-list-select">
-							<select class="form-control">
-								<option name="1" value="1" selected="selected">1</option>
-								<option name="2" value="2" >2</option>
-								<option name="3" value="3" >3</option>
-								<option name="4" value="4" >4</option>
-								<option name="5"  value="5" >5</option>
-							</select>
-						</div>
-						<a href="javascript:void(0)">下一页>></a>
+						<ul id="pagination" class="pagination"></ul>
 					</div>
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		$ (function() {
+      if ($('#pagination')) {
+        // var pagecount = <%= %>;
+        // var pagesize = <%= %>;
+        // var currentPage = <%= %>;
+        var pagecount = 50;
+        var pagesize = 5;
+        var currentPage = 3;
+        var counts, pagehtml = '';
+        if (pagecount % pagesize === 0) {
+          counts = parseInt(pagecount / pagesize, 10);
+        } else {
+        	counts = parseInt(pagecount / pagesize, 10) + 1;
+        }
+        if (pagecount <= pagesize) { pagehtml = '';}
+        if (pagecount > pagesize) {
+        	if (currentPage > 1) {
+        		pagehtml += '<li><a href="/story/category/<%=book._id%>?currentPage=' + (currentPage - 1) + '">上一页</a></li>';
+        	}
+        	for (var i = 0; i < counts; i++) {
+            if (i >= (currentPage - 3) && i < (currentPage + 3)) {
+            	if (i === currentPage - 1) {
+            		pagehtml += '<li class="active"><a href="/course/index/' + (i + 1) + '">' + (i + 1) + '</a></li>';
+            	} else {
+            		pagehtml += '<li><a href="/course/index/' + (i + 1) + '">' + (i + 1) + '</a></li>';
+            	}
+            }
+        	}
+        	if (currentPage < counts) {
+            pagehtml += '<li><a href="/course/index/' + (currentPage + 1) + '">下一页</a></li>';
+        	}
+        }
+        $("#pagination").html(pagehtml);
+      }
+		});
+	</script>
 <%-include footer.html %>

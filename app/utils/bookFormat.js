@@ -22,6 +22,7 @@ exports.billboard = function *() {
 exports.chapters = function *(story) {
   // ips = yield IP.find({}).exec();
   let res;
+  let chapters = [];
   // let proxy = ips[ipNo++].proxy;
   // if (ipNo >= ips.length) {
   //   ipNo = 0;
@@ -35,11 +36,11 @@ exports.chapters = function *(story) {
       gzip: true,
       encoding: null,
     });
+    chapters = Analyse.analyseCategory(iconv.decode(res, 'gbk'));
   } catch (error) {
     console.log('爬取失败，原因是：');
     console.log(error.message);
   }
-  let chapters = Analyse.analyseCategory(iconv.decode(res, 'gbk'));
   return chapters;
 };
 exports.content = function *(link, _id) {
