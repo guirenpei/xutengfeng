@@ -9,6 +9,7 @@ const querystring = require('querystring');
 const storynumber = ['玄幻小说', '修真小说', '都市小说', '穿越小说', '网游小说', '科幻小说'];
 
 exports.searchResults = function *(keyword) {
+  console.log('results - search', yield* searchResults(keyword));
   return yield* searchResults(keyword);
 };
 function analyseSearch(html) {

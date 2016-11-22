@@ -1,0 +1,15 @@
+node_modules
+bower_components
+.DS_Store
+*.log
+src/common/config.js
+src/common/config.db.js
+src/models/schemas
+tmp
+bin/card.xml
+bin/synonyms_output.txt
+application_card.xml
+doc/*.html
+.tern-project
+.tags
+.tags1

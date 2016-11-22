@@ -11,13 +11,20 @@ const storynumber = ['玄幻小说', '修真小说', '都市小说', '穿越小�
 
 exports.login = function(req, res) {
   co(function *() {
-    let name = req.query.name;
-    const user = yield User.findOne({username: name});
-    if (user) {
-      req.session.user = user;
-      res.redirect('/story');
+    let mimi = req.query.mimi;
+    let xingmen = req.query.xingmen;
+    console.log('mimi', mimi);
+    console.log('xingmen', xingmen);
+    if (mimi === '叶大伟') {
+      res.redirect('/mmBlog');
     } else {
-      res.redirect('/index');
+      const user = yield User.findOne({username: xingmen});
+      if (user) {
+        req.session.user = user;
+        res.redirect('/story');
+      } else {
+        res.redirect('/');
+      }
     }
   });
 };
@@ -70,6 +77,8 @@ exports.search = function(req, res) {
     const keyword = req.query.keyword || '';
     const qs = `/${keyword}.*/`;
     let results = yield Search.searchResults(keyword);
+    console.log('keyword', keyword);
+    console.log('results', results);
     for (const result of results) {
       let story = yield StoryDetail.find({storyname: result.storyname, link: result.link}) || {};
       if (story || story !== {}) {
@@ -91,14 +100,21 @@ exports.content = function(req, res) {
     console.log('content', req.session.user);
     const link = req.params.link;
     const _id = req.query._id;
-    const user = req.session.user;
-    const message = yield BookFormat.content(link, _id);
-    yield CollectBook.collect(user, _id, message.content.chaptername, link);
-    res.render('story/content', {
-      title: `${message.content.chaptername}  ${message.book.author}--星门`,
-      book: message.book,
-      content: message.content,
-    });
+    if (link === 'category') {
+      res.redirect(`/story/category/${_id}`);
+    } else {
+      const user = req.session.user;
+      const message = yield BookFormat.content(link, _id);
+      yield CollectBook.collect(user, _id, message.content.chaptername, link);
+      // console.log('message', message);
+      res.render('story/content', {
+        title: `${message.content.chaptername}  ${message.book.author}--星门`,
+        book: message.book,
+        content: message.content,
+        prev: message.prev,
+        next: message.next,
+      });
+    }
   });
 	// 先取出来小说里面的链接，查看是否kanshu.com的网站
 };
@@ -132,6 +148,9 @@ exports.category = function(req, res) {
     const _id = req.params._id;
     const story = yield StoryDetail.findById(_id);
     const chapters = yield BookFormat.chapters(story);
+    const total = chapters.length;
+    let pagesize = 10;
+    let current = 0;
     res.render('story/category', {
       title: `${story.storyname}--星门`,
       book: story,
@@ -194,3 +213,43 @@ exports.home = function(req, res) {
     });
   });
 };
+exports.reactData = function(req, res) {
+  co(function *() {
+    const user = req.session.user;
+    const pinshu = yield StoryDetail.find({}).sort({allrecommend: -1}).limit(6); // 分类本周强推榜
+    const tuijian = yield StoryDetail.find({}).sort({allcollection: -1}).limit(6); // 分类本周强推榜
+    const jingpin = yield StoryDetail.find({}).sort({allclick: -1}).limit(6); // 分类本周强推榜
+    const quanpin = yield StoryDetail.find({}).sort({monthrecommend: -1}).limit(6); // 分类本周强推榜
+    // ['玄幻小说', '修真小说', '都市小说', '穿越小说', '网游小说', '科幻小说'];
+    const primexuanhuan = yield StoryDetail.find({number: 0}).sort({commentsnumber: -1}).limit(6); // 热销作品
+    const primexiuzhen = yield StoryDetail.find({number: 1}).sort({commentsnumber: -1}).limit(6); // 热销作品
+    const primedushi = yield StoryDetail.find({number: 2}).sort({commentsnumber: -1}).limit(6); // 热销作品
+    const primechuanyue = yield StoryDetail.find({number: 3}).sort({commentsnumber: -1}).limit(6); // 热销作品
+    const primewangyou = yield StoryDetail.find({number: 4}).sort({commentsnumber: -1}).limit(6); // 热销作品
+    const primekehuan = yield StoryDetail.find({number: 5}).sort({commentsnumber: -1}).limit(6); // 热销作品
+    const latestbook = yield StoryDetail.find({}).sort({'meta.updateAt': -1}).limit(30); // 分类小说更新
+    const billboard = yield BookFormat.billboard;
+    const data = {
+      title: '星门小说网',
+      user: user,
+      billboard: billboard,
+      primexuanhuan: primexuanhuan,
+      primexiuzhen: primexiuzhen,
+      primedushi: primedushi,
+      primechuanyue: primechuanyue,
+      primewangyou: primewangyou,
+      primekehuan: primekehuan,
+      latestbook: latestbook,
+      pinshu: pinshu,
+      tuijian: tuijian,
+      jingpin: jingpin,
+      quanpin: quanpin,
+    }
+    if (data) {
+      res.json({data: data.pinshu, success: true});
+    } else {
+      res.json({data: data.pinshu, success: false});
+    }
+
+  });
+}
