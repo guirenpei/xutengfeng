@@ -215,7 +215,6 @@ exports.home = function(req, res) {
 };
 exports.reactData = function(req, res) {
   co(function *() {
-    const user = req.session.user;
     const pinshu = yield StoryDetail.find({}).sort({allrecommend: -1}).limit(6); // 分类本周强推榜
     const tuijian = yield StoryDetail.find({}).sort({allcollection: -1}).limit(6); // 分类本周强推榜
     const jingpin = yield StoryDetail.find({}).sort({allclick: -1}).limit(6); // 分类本周强推榜
@@ -228,11 +227,10 @@ exports.reactData = function(req, res) {
     const primewangyou = yield StoryDetail.find({number: 4}).sort({commentsnumber: -1}).limit(6); // 热销作品
     const primekehuan = yield StoryDetail.find({number: 5}).sort({commentsnumber: -1}).limit(6); // 热销作品
     const latestbook = yield StoryDetail.find({}).sort({'meta.updateAt': -1}).limit(30); // 分类小说更新
-    const billboard = yield BookFormat.billboard;
+    // const billboard = yield BookFormat.billboard;
     const data = {
       title: '星门小说网',
-      user: user,
-      billboard: billboard,
+      // billboard: billboard,
       primexuanhuan: primexuanhuan,
       primexiuzhen: primexiuzhen,
       primedushi: primedushi,
@@ -246,9 +244,9 @@ exports.reactData = function(req, res) {
       quanpin: quanpin,
     }
     if (data) {
-      res.json({data: data.pinshu, success: true});
+      res.send({data: data.pinshu, success: true});
     } else {
-      res.json({data: data.pinshu, success: false});
+      res.send({data: data.pinshu, success: false});
     }
 
   });
